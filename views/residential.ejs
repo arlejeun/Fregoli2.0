@@ -1,0 +1,537 @@
+<%
+	var residential = verticalConfig.residential || {}
+	var form = residential.form || {}
+    var list1 = form.list1 || []
+    
+%>
+<script>
+    var claimAvailableList1 = <%- JSON.stringify(list1) %>;
+</script>
+
+<script id="residentialTemplate" type="text/html">
+
+    <% if (residential.show) { %>
+
+    <div style="background-color:#fff">
+        <div id="SVGheroSectionBg" class="svg-preloader position-relative gradient-half-primary-v3">
+            <div class="container space-2">
+                <div class="row align-items-lg-center">
+                    <div class="col-lg-5 mb-7 mb-lg-0">
+                        <!-- Info -->
+                        <h1 class="mb-4"><span class="text-primary font-weight-semi-bold"><%=residential.title%></span></h1>
+                        <p><%=residential.subtitle%></p>
+                        <!-- End Info -->
+                    </div>
+                    <div class="col-lg-7">
+                        <!-- SVG Icon -->
+                        <figure class="ie-we-have-an-idea">
+                        <img class="js-svg-injector" src="<%=verticalPath%>/svg/illustrations/<%=residential.illustration%>" alt=<%=residential.title%>
+                                data-parent="#SVGheroSectionBg">
+                        </figure>
+                        <!-- End SVG Icon -->
+                    </div>
+                </div>
+        
+        </div>
+        
+                <!-- SVG Background -->
+            <figure class="position-absolute right-0 bottom-0 left-0">
+                    <img class="js-svg-injector" src="<%=verticalPath%>/svg/components/wave-1-bottom-sm.svg" alt="Image Description"
+                        data-parent="#SVGheroSectionBg">
+            </figure>
+            <!-- End SVG Background Section -->
+        </div>
+        <!-- End Hero Section -->
+
+
+        <!-- How It Works Section -->
+        <div class="container mb-0">
+            <!-- Title -->
+            <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+                <figure id="icon14" class="svg-preloader ie-height-72 max-width-10 mx-auto mb-3">
+                <img class="js-svg-injector" src="<%=verticalPath%>/svg/icons/icon-14.svg" alt="SVG"
+                        data-parent="#icon14">
+                </figure>
+                <h2 class="font-weight-medium"><%-markdown(residential.intro)%></h2>
+            </div>
+            <!-- End Title -->
+        
+            <div class="row align-items-lg-center">
+                <div class="col-lg-6 order-lg-2 mb-7 mb-lg-0">
+                <ul class="list-unstyled">
+                    <!-- Info Block -->
+                    <li class="u-indicator-steps py-3">
+                    <div class="media align-items-center border rounded p-5">
+                        <div class="d-flex u-indicator-steps__inner mr-3">
+                        <span class="display-4 text-primary font-weight-medium">1.</span>
+                        </div>
+                        <div class="media-body">
+                        <p class="mb-0"><%-markdown(residential.intro1)%></p>
+                        </div>
+                    </div>
+                    </li>
+                    <!-- End Info Block -->
+        
+                    <!-- Info Block -->
+                    <li class="u-indicator-steps py-3">
+                    <div class="media align-items-center border rounded p-5">
+                        <div class="d-flex u-indicator-steps__inner mr-3">
+                        <span class="display-4 text-primary font-weight-medium">2.</span>
+                        </div>
+                        <div class="media-body">
+                        <p class="mb-0"><%-markdown(residential.intro2)%></p>
+                        </div>
+                    </div>
+                    </li>
+                    <!-- End Info Block -->
+        
+                    <!-- Info Block -->
+                    <li class="u-indicator-steps py-3">
+                    <div class="media align-items-center border rounded p-5">
+                        <div class="d-flex u-indicator-steps__inner mr-3">
+                        <span class="display-4 text-primary font-weight-medium">3.</span>
+                        </div>
+                        <div class="media-body">
+                        <p class="mb-0"><%-markdown(residential.intro3)%></p>
+                        </div>
+                    </div>
+                    </li>
+                    <!-- End Info Block -->
+                </ul>
+                </div>
+        
+                <div id="SVGhouseAgency" class="col-lg-6 order-lg-1 svg-preloader">
+                <div class="pr-lg-7">
+                    <!-- SVG Icon -->
+                    <figure class="ie-house-agency">
+                    <img class="js-svg-injector" src="<%=verticalPath%>/svg/illustrations/<%=residential.illustration1%>" alt="Image Description"
+                            data-parent="#SVGhouseAgency">
+                    </figure>
+                    <!-- End SVG Icon -->
+                </div>
+                </div>
+            </div>
+            </div>
+            <!-- End How It Works Section -->
+
+
+        <!-- Begin Calculator Form -->
+        <div id="residential-calculator" class="container space-2 mt-0 mb-5">
+            <!--Step Form -->
+                <form
+                action="javascript:;" onsubmit="gSolResidentialCalculator.finalize();return false;"
+                class="js-validate js-step-form"
+                data-progress-id="#progressStepForm"
+                data-steps-id="#contentStepForm"
+                novalidate="novalidate"
+                data-bind="click: submit">
+                <div class="card">
+                <div class="card-header p-5">
+                <nav id="progressStepForm" class="js-step-progress nav nav-icon nav-justified text-center">
+                <a href="javascript:;" class="nav-item">
+                    <span class="nav-icon-action">
+                    <span class="fas fa-user-circle nav-icon-action-inner"></span>
+                    </span>
+                    Contact Information
+                </a>
+                <a href="javascript:;" class="nav-item">
+                    <span class="nav-icon-action">
+                    <span class="fas fa-building nav-icon-action-inner"></span>
+                    </span>
+                    House Information
+                </a>
+                <a href="javascript:;" class="nav-item">
+                    <span class="nav-icon-action">
+                    <span class="fas fa-file-invoice-dollar nav-icon-action-inner"></span>
+                    </span>
+                    Savings Estimate
+                </a>
+                </nav>
+                </div>
+    
+                <!--Content Step Form -->
+                <div id="contentStepForm" class="card-body p-5">
+                
+                <div id="selectStepOne" class="active">
+                <!-- Content Step One -->
+                <div  class="container">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mt-3">
+                        <p class="font-size-2 ">Contact Information</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row">    
+                        <div class="col-md-6 mb-2">
+                            <div class="mb-2">
+                                <input type="text" name="firstname" id="firstname" class="form-control" placeholder="First Name" aria-label="First Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <div class="mb-2">
+                                <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Last Name" aria-label="Last Name">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+    
+                        <div class="js-form-message js-focus-state col-md-6 mb-2">
+                            <div class="mb-4">
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Email" aria-label="Email" required
+                                data-msg="Please enter an email."
+                                data-error-class="u-has-error"
+                                data-success-class="u-has-success">
+                                </div>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <div class="mb-4">
+                                <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone" aria-label="Phone">
+                                
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                    <div class="row">
+    
+                        <!-- Select -->
+                        <div class="col-sm-6 mb-4 js-form-message js-focus-state">
+                            <p class="font-size-2 ">Are you Homeowner?</p>
+            
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline1" name="homeownerradio" class="custom-control-input" required
+                                        data-msg="Please answer the question."
+                                        data-error-class="u-has-error"
+                                        data-success-class="u-has-success">
+                                <label class="custom-control-label" for="customRadioInline1">Yes</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline2" name="homeownerradio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline2">No</label>
+                                </div>
+    
+                        </div>
+                            <!-- End Select -->
+    
+                    </div>
+    
+                </div>
+                <!-- End of Content Step One -->
+                <div class="d-flex justify-content-end">
+                    <button type="button" type="submit" onclick="gSolResidentialCalculator.getContactInfo()" class="btn btn-sm btn-primary transition-3d-hover mr-1" data-next-step="#selectStepTwo">Next</button>
+                </div>
+                </div>
+    
+                <div id="selectStepTwo" style="display: none;">     
+                <!-- Beginning of content step 2 -->
+                    <div  class="container">
+    
+                        <div class="row">
+                        <div class="col-md-6 mb-4 mt-4">
+                            <p class="font-size-2 ">House Information</p>
+                        </div>
+                        </div>
+                    
+                        <div class="row">
+    
+                            <div class="col-md-6 mb-2">
+                                <div class="mb-4">
+                                    <input type="text" id="address" class="form-control" name="address" placeholder="Address" aria-label="Address">
+                                </div>
+                            </div>
+    
+                            <div class="col-md-2 mb-2">
+                                <div class="js-form-message js-focus-state mb-4">
+                                    <input type="number" id="zipcode" class="form-control" name="zipcode" placeholder="Zip Code" aria-label="Zip Code" required
+                                        data-msg="Enter Zip Code"
+                                        data-error-class="u-has-error"
+                                        data-success-class="u-has-success">
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4 mb-2">
+                                <div class="js-form-message js-focus-state mb-4">
+                                <input type="text" id="city" name="city" class="form-control" placeholder="City" aria-label="City">
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                        <div class="row">
+    
+                            <div class="col-md-4 mb-2">
+                            <div class="js-form-message js-focus-state input-group-pill mb-4">
+                                <label for="sqfootage">Home Square Footage</label>
+                                <select id="sqfoot" name="sqfoot" class="form-control" id="sqfootage" required>
+                                    <option>less than 500 sq.</option>
+                                    <option>between 500-1500 sq.</option>
+                                    <option>between 1500-3000 sq.</option>
+                                    <option>between 3000-5000 sq.</option>
+                                    <option>more than 5000 sq.</option>
+                                </select>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-4 mb-2">
+                            
+                        <div class="js-form-message js-focus-state input-group-pill form-group">
+                            <label for="bill">Monthly Energy Bill</label>
+                            <select id="bill" class="form-control" name="bill">
+                            <option>less than $150 per month</option>
+                            <option>between $150-$225 per month</option>
+                            <option>between $225-$300 per month</option>
+                            <option>between $300-$500 per month</option>
+                            <option>more than $500 per month</option>
+                            </select>
+                        </div>
+                        
+                        <!--<div class="js-form-message js-focus-state input-group-pill mb-4">
+                                <input type="number" id="bill" class="form-control" name="bill" placeholder="Avg Monthly Bill" aria-label="Avg Monthly Bill">
+                            </div>-->
+                        </div>
+    
+    
+                        </div>
+    
+                    </div>
+                    <!-- End of content step 2 -->
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-sm btn-soft-secondary transition-3d-hover mr-1" title="Click to do something" href="#" 
+                        data-previous-step="#selectStepOne">Back</a>
+                    <button type="button" class="btn btn-sm btn-primary transition-3d-hover" onclick="gSolResidentialCalculator.update()" data-next-step="#selectStepThree">Next</button>
+                </div>
+                </div>
+    
+                <div id="selectStepThree" style="display: none;">
+                <!-- Begin Content Step 3 -->
+                <!-- Begin Saving Estimator-->
+                <div class="container space-2 mb-5 calculator">
+                    <div class="row text-center m-4">
+                        <h2>Your Solar Roof can generate <span id="save-per-month" class="text-primary">$167</span> of energy per month over 30 years</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="btn-group btn-group-toggle mb-8">
+                                <a class="js-animation-link btn btn-sm btn-outline-secondary btn-sm-wide active" href="javascript:;"
+                                data-target="#finance-simulation"
+                                data-link-group="groups"
+                                data-animation-in="slideInUp">
+                                Finance</a>
+                                <a class="js-animation-link btn btn-sm btn-outline-secondary btn-sm-wide" href="javascript:;"
+                                data-target="#cash-simulation"
+                                data-link-group="groups"
+                                data-animation-in="slideInUp">
+                                Cash</a>
+                            </div>
+                        
+                            <div class="row" style="text-align: center">
+    
+                                <div id="finance-simulation" data-target-group="groups">
+                                    
+                                    <!-- Begin Content Finance Simulation -->
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                            <ul class="list-inline text-center" style="margin-bottom:0px">
+                                                <li class="list-inline-item">
+                                                    <span class="d-block">
+                                                    <span class="display-4 text-primary font-weight-normal" id="rev-per-month">
+                                                        <span class="align-top font-size-2">$</span>228
+                                                    </span>
+                                                    <span class="d-block text-primary font-size-1">per month</span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            </div>
+        
+                                            <div class="col-md-6 mb-5 my-padding-form">
+                                                <span class="font-size-1">Average value of energy over 30 years
+                                                </span>
+                                            </div>
+                                        </div>
+    
+                                        <div class="row">
+                                        <div class="col-md-5 mt-2">
+                                                <ul class="list-inline text-center" style="margin-bottom:0px">
+                                                    <li class="list-inline-item">
+                                                    <span class="d-block">
+                                                        <span class="display-4 font-weight-normal" id="payPerMonth">
+                                                        -<span class="align-top font-size-2">$</span>394
+                                                        </span>
+                                                        <span class="d-block font-size-1">per month</span>
+                                                    </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+            
+                                            <div class="col-md-6 mb-5 my-padding-form">
+                                                <span class="font-size-1">Loan payment after tax credit and deductions
+                                                </span>
+                                                
+                                            </div>
+                                    
+                                        </div>
+    
+                                        <div class="row">
+                                            <div class="col-md-5 mt-2">
+                                                <ul class="list-inline text-center" style="margin-bottom:0px">
+                                                    <li class="list-inline-item">
+                                                    <span class="d-block">
+                                                        <span class="display-4 font-weight-normal" id="costPerMonth">
+                                                        <span class="align-top font-size-2">$</span>166
+                                                        </span>
+                                                        <span class="d-block font-size-1">per month</span>
+                                                    </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+            
+                                            <div class="col-md-6 mb-5 my-padding-form">
+                                                <span class="font-size-1">Net cost over 30-year loan
+                                                </span>
+                                                
+                                            </div>
+                                    
+                                        </div>
+                                </div>
+    
+        
+                                <!-- End Content Finance Simulation -->
+                                
+                                <div id="cash-simulation" data-target-group="groups" style="display: none; opacity: 0;">
+                                    
+                                    <!-- Begin Content Cash Simulation -->
+                                    
+    
+                                    <dl class="row">
+                                        <dt class="col-sm-4"> 
+                                        <span style="font-size: 24px;font-weight:500;" id="cash-value">
+                                            <span class="align-top"> $</span>60,000
+                                        </span>
+                                        </dt>
+                                        <dd class="col-sm-8"><span class="font-size-1">Value of energy</span></dd>
+                                    
+                                        <dt class="col-sm-4">
+                                        <span style="font-size: 24px;font-weight:500;" id="total-cost">
+                                            <span class="align-top">-$</span>94,200
+                                        </span>
+                                        </dt>
+                                        <dd class="col-sm-8"><span class="font-size-1">Cost of installation</span></dd>
+    
+                                        <dt class="col-sm-4">
+                                            <span style="font-size: 24px;font-weight:500;" id="tax-credit">
+                                            <span class="align-top"> $</span>16,200
+                                            </span>
+                                        </dt>
+                                        <dd class="col-sm-8"><span class="font-size-1">Tax Credit</span></dd>
+    
+                                        </dl>
+    
+                                        <div class="text-center">
+                                            <span class="u-divider u-divider--xs u-divider--text">Total</span>
+                                        </div>
+    
+    
+                                        <div class="col-md-5 mt-2">
+                                            <ul class="list-inline text-center" style="margin-bottom:0px">
+                                                <li class="list-inline-item">
+                                                <span class="d-block">
+                                                    <span class="display-4 font-weight-normal" id="cost-30yr">-$18,100
+                                                    </span>
+                                                    <span class="d-block font-size-1">Net Profit over 30 year</span>
+                                                </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+    
+                                        
+                                    <!-- End Content Cash Simulation -->
+        
+                                </div>
+    
+                            </div>
+        
+                        </div>
+    
+                        <div class="col-md-8">
+    
+                            <div class="row m-3">
+    
+                                <div class="mb-6">
+                                    <h4>Customize your Solar Roof</h4>
+                                </div>
+                                
+                                <dl class="row mb-6">
+                                    <dt class="col-sm-4">Recommendations</dt>
+                                    <dd class="col-sm-8">
+                                        40% solar coverage to meet your home’s energy needs. Solar and non-solar tiles appear the same from street level.
+                                    </dd>
+                                    
+                                    <dt class="col-sm-4">% Solar Coverage</dt>
+                                    <dd class="col-sm-8">
+                                        <!-- Range Slider -->
+                                        <input class="js-range-slider" id="solar-slider" type="text"
+                                        data-extra-classes="u-range-slider u-range-slider-indicator u-range-slider-grid"
+                                        data-type="single"
+                                        data-grid="false"
+                                        data-hide-from-to="false"
+                                        data-min="0"
+                                        data-max="70"
+                                        data-step="10"
+                                        value="40"
+                                        data-result-min onchange="gSolResidentialCalculator.update()">
+                                        <!-- End Range Slider -->
+                                    </dd>
+                                    
+                                    <dt class="col-sm-4 text-truncate">Constraints</dt>
+                                    <dd class="col-sm-8">We cannot install solar tiles on some areas of your roof due to building regulations and obstructions like skylights and chimneys.</dd>
+                                    
+                                    
+                                    </dl>
+        
+                                </div>
+    
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+                <!-- End Saving Estimator-->            
+                <!-- End of Content Step 3 -->
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-sm btn-soft-secondary transition-3d-hover mr-1" data-previous-step="#selectStepTwo">Back</a>
+                    <button type="submit"
+                    class="btn btn-sm btn-primary transition-3d-hover">Interested</button>
+                </div>
+                </div>
+                </div>
+                <!--End Content Step Form -->
+                </div>
+    
+                </form>
+            </div>
+            <!-- End Calculator Form -->
+
+</div>
+
+<% } %>
+
+</script>
+
+
+<script type="text/javascript">
+                    
+    $(document).ready(function(){
+        
+        if ('userSettings' in sessionStorage) {
+            var userPrefs = JSON.parse(sessionStorage.getItem('userSettings'));
+            $("#firstname").val(userPrefs.firstName);
+            $("#lastname").val(userPrefs.lastName);
+            $("#email").val(userPrefs.email);
+            $("#phone").val('+'+userPrefs.phoneNumber);
+        }
+        
+    });
+
+</script>

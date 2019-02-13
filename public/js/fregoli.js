@@ -1,0 +1,839 @@
+(function($, ko) {
+    // data-bind="element: observable"
+    // sets observable to element ..
+    ko.bindingHandlers.element = {
+        init: function(element, valueAccessor) {
+            var target = valueAccessor();
+            target(element);
+        }
+    };
+
+    function PartialViewViewModel(params) {
+        var self = this;
+        
+        self.name = params.name;
+        self.title = params.title;
+        self.template = params.template;
+        self.model = params.model;
+        self.authRequired = params.authRequired || false;
+        self.onActivate = params.onActivate || $.noop;
+        self.onDeactivate = params.onDeactivate || $.noop;
+        
+        self.getTemplate = function() {
+            return self.template;
+        };
+
+        self.toString = function() {
+            return 'View: ' + self.name;
+        };
+    }
+
+    function MenuItemViewModel(params) {
+        var self = this;
+
+        self.title = params.label || '';
+        self.href = params.href || '';
+        self.authenticated = params.auth || false;
+        self.visible = ko.observable(true);
+    }
+
+    function LoginViewModel(parent) {
+        var self = this;
+
+        self.username = ko.observable();
+        self.password = ko.observable();
+        self.usernameElement = ko.observable(null);
+        self.isAuthenticating = ko.observable(false);
+        self.errorMessage = ko.observable();
+        self.userInfo = ko.observable();
+        self.login = function(form) {
+            self.errorMessage('');
+            self.isAuthenticating(true);
+            $.processing('show', { delay: 0 });
+            $.post($(form).attr('action'), {
+                username: self.username(),
+                password: self.password(),
+                _csrf: $.siteData.csrfToken || ''
+            }).done(function(data) {
+                self.username('');
+                self.password('');
+                
+                if (data.error) {
+                    self.errorMessage(data.message);
+                    return;
+                }
+                self.errorMessage('');
+                if (data.authenticated) {
+                    parent.setAuthenticated(data);
+                    $.extend(true, $.siteData, data);
+                    
+                    
+                    // ICAR hardcode
+                    if ($.siteData.settings.GDemoHost) {
+                        $.siteData.env.GDemoHost = $.siteData.settings.GDemoHost;
+                        $.siteData.env.ConfigType = "pod";
+                    }
+                    
+                    // demoid from URL parameter
+                    if (demoProcess.getParameterByName("demoid")) {
+                        $.siteData.settings.template = demoProcess.getParameterByName("demoid");
+                    }
+                    
+                    if (! widgetCX.isActivated()) {
+                        if ($.siteData.settings['platform'] === 'purecloud') {
+                            // gsolUser.login('arnaud.lejeune@genesys.com')
+                            // email: $.siteData.customer.local.EmailAddress || $.siteData.customer["customer.email1"]
+                            var email = $.siteData.customer.local.EmailAddress || $.siteData.customer["customer.email1"]; // --> arnaud.lejeune@genesys.com
+                            
+                            // Review the logical case to map genesys (gdemo email) to simdomain configuration
+                            //var simdomain_email = email.substring(0, email.lastIndexOf('@') + 1) + 'simdomain.com'; //--> arnaud.lejeune@simdomain.com
+                            widgetCX.widgetLoad(function(){
+                                gsolUser.customizePureCloudWidgets(email);
+                            });
+                            var gsolUser = new gsol.User();
+                            widgetCX.initPureCloudCfg();
+                            
+                        } else {
+                            widgetCX.initCfg();
+                        }
+                    }
+
+                    demoProcess.getRecentCmsState(); 
+                    
+                    _gAnalytics.event($.siteData.appTitle, 'Login', 'test');
+
+                    if (typeof ac == 'function') {
+                        ac('identify', $.siteData.customer["customer.customer_phone"], {
+                            givenName: $.siteData.customer["customer.firstname"],
+                            familyName: $.siteData.customer["customer.lastname"],
+                            email: $.siteData.customer["customer.email1"],
+                            phone: $.siteData.customer["customer.customer_phone"]
+                        });                
+                        ac('api.customer.update', {
+                            givenName: $.siteData.customer["customer.firstname"],
+                            familyName: $.siteData.customer["customer.lastname"],
+                            email: $.siteData.customer["customer.email1"],
+                            phone: $.siteData.customer["customer.customer_phone"]
+                        });
+                    }    
+                }
+            }).fail(function(xhr) {
+                displayAjaxError(xhr);
+            }).always(function() {
+                self.isAuthenticating(false);
+                $.processing('hide');
+            });
+        };
+    }
+
+    function FormElementViewModel(params) {
+        var self = this;
+        
+        self.label = ko.observable(params.label || '');
+        self.name = ko.observable(params.name || 'noname');
+        self.element = ko.observable(params.element || 'input');
+        self.type = ko.observable(params.element === 'input' ? (params.type || 'text') : '');
+        self.readonly = ko.observable(params.readonly || false);
+        self.placeholder = ko.observable(params.placeholder || '');
+        self.options = ko.observableArray(params.options || []);
+        self.value = Array.isArray(params.value) ?
+            ko.observableArray(params.value)
+            : ko.observable(params.value).extend(params.validation || {});
+    }
+
+    function executeCallback(name, context, params) {
+        var callbacks = $.siteData.callbacks || {}
+        var callback = callbacks[name];
+        if (!$.isFunction(callback)) {
+            return;
+        }
+
+        $.processing('show', { delay: 0 });
+        var f = function() {
+            try {
+                return callback.call(context, params);
+            } catch(e) {
+                alert(e);
+            }
+        }
+        $.when(f())
+            .then(function() {
+                $.processing('hide')
+            });
+    }
+
+    function PurchaseViewModel(parent, params) {
+        var self = this;
+        
+        self.fields = ko.observableArray(ko.utils.arrayMap(params || [], function(item) {
+            return new FormElementViewModel(item);
+        }));
+
+        self.findField = function(name) {
+            return ko.utils.arrayFirst(self.fields(), function(item) {
+                return item.name() === name;
+            });
+        };
+
+        var initialized = false;
+
+        self.activate = function() {
+            if (initialized) {
+                return;
+            }
+            initialized = true;
+            
+            var params = { model: self, form: $('#purchase-form') };
+            executeCallback('initPurchase', self, params);
+        }
+
+        self.errors = ko.validation.group(self, {
+            deep: true,
+            observable: false
+        });
+        self.submit = function() {
+            self.errors.showAllMessages();
+            if (self.errors().length > 0) {
+                $('.input-validation-error:first').focus();
+                return;
+            }
+
+            var params = {};
+            ko.utils.arrayForEach(self.fields(), function(item) {
+                if (item.readonly()) {
+                    return;
+                }
+                params[item.name()] = item.value();
+            });
+            executeCallback('submitPurchase', self, params);
+        };
+
+        self.toString = function() {
+            return 'PurchaseViewModel';
+        }
+    }
+    
+    function ClaimViewModel(params) {
+        var self = this;
+        
+        self.availableReasons = ko.observableArray();
+        self.reason = ko.observable().extend({ required: true });
+        self.comment = ko.observable().extend({ required: true });
+        self.errors = ko.validation.group(self);
+        self.submit = function() {
+            self.errors.showAllMessages();
+            if (self.errors().length > 0) {
+                $('.input-validation-error:first').focus();
+                return;
+            }
+
+            var params = { reason: self.reason(), comment: self.comment() };
+            executeCallback('submitClaim', self, params);
+        };
+
+        self.toString = function() {
+            return 'ClaimViewModel';
+        }
+    }
+
+    function ResidentialViewModel(params) {
+        var self = this;
+        self.availableReasons = ko.observableArray();
+        self.reason = ko.observable().extend({ required: true });
+        self.comment = ko.observable().extend({ required: true });
+        self.errors = ko.validation.group(self);
+
+        var initialized = false;
+
+        self.activate = function() {
+            if (initialized) {
+                return;
+            }
+            //initialized = true; --> Need to reactivate the view all the time
+            
+            var params = { model: self, catalog: $('#residential-calculator') };
+            executeCallback('initResidential', self, params);
+        };
+
+        self.submit = function() {
+            self.errors.showAllMessages();
+            if (self.errors().length > 0) {
+                $('.input-validation-error:first').focus();
+                return;
+            }
+
+            var params = { reason: self.reason(), comment: self.comment() };
+            executeCallback('submitResidentialForm', self, params);
+        };
+
+        self.toString = function() {
+            return 'ResidentialViewModel';
+        }
+    };
+
+    function FaqViewModel(params) {
+        var self = this;
+        self.errors = ko.validation.group(self);
+        var initialized = false;
+        self.activate = function() {
+            if (initialized) {
+                return;
+            }
+            //initialized = true; --> Need to reactivate the view all the time         
+            var params = { model: self, params:{}};
+            executeCallback('resetFaq', self, params);
+        };
+        
+        self.toString = function() {
+            return 'FaqViewModel';
+        }
+    };
+    
+    function ShopViewModel(params) {
+        var self = this;
+        //self.products = ko.observableArray();
+        self.chosenProduct = ko.observable("new value").publishOn("shop-product");
+        var initialized = false;
+        self.activate = function() {
+            if (initialized) {
+                return;
+            }
+            initialized = true;
+            var params = { model: self, catalog: $('#shop-catalog') };
+            executeCallback('initShop', self, params);
+        };
+
+        self.submit = function() {
+            self.errors.showAllMessages();
+            if (self.errors().length > 0) {
+                $('.input-validation-error:first').focus();
+                return;
+            }
+        };
+
+        self.selectItem = function(item) {
+            var params = { model: self, catalog: $('#shop-catalog'), item: item };
+            self.chosenProduct(item);
+            location.hash = 'product';
+            executeCallback('selectItem', self, params);
+        }
+
+        self.toString = function() {
+            return 'ShopViewModel';
+        }
+    }
+
+    function Product(data) {
+        var self = this;
+        self.label = ko.observable(data.label);
+        self.price = ko.observable(data.price);
+    }
+
+    function ProductViewModel(params) {
+        var self = this;
+        self.products = ko.observableArray([]);
+
+        /*$.get("/gsol/fregoli.cfg", function(allData) {
+            //var mappedProducts = $.map(allData, function(item) { 
+            //    return new Product(item);
+            console.log(allData);
+            }
+            
+            //self.products(mappedProducts);
+        });    */
+        //self.products = ko.observableArray();
+        //self.reason = ko.observable().extend({ required: true });
+        //self.comment = ko.observable().extend({ required: true });
+        //self.errors = ko.validation.group(self);
+
+        var initialized = false;
+        self.selectedProduct = ko.observable().subscribeTo("shop-product");
+        self.chosenProductData = ko.observable();
+        
+        self.getPrice = function(label) {
+            var products = self.products();
+            var pct = products.filter(function(item){
+                return item.label == label;
+            })
+            return pct.price;
+        }
+
+    
+        self.activate = function() {
+            if (initialized) {
+                return;
+            }
+            initialized = true;
+            
+            var params = { model: self, catalog: $('#shop-catalog') };
+            executeCallback('select-item', self, params);
+        };
+
+        
+        self.submit = function() {
+            self.errors.showAllMessages();
+            if (self.errors().length > 0) {
+                $('.input-validation-error:first').focus();
+                return;
+            }
+
+            //var params = { reason: self.reason(), comment: self.comment() };
+            //executeCallback('submitResidentialForm', self, params);
+        };
+
+        self.toString = function() {
+            return 'ShopViewModel';
+        }
+    }
+
+    function MyAccountViewModel(parent, params) {
+        var self = this;
+        
+        self.country = ko.observable();
+        self.phone = ko.observable();
+        self.email = ko.observable();
+        self.env = ko.observable();
+        self.addSurvey = ko.observable();
+        self.msgText = ko.observable();
+        self.channels = $.siteData.channels;
+        self.selectedChannel = ko.observable().extend({ required: { message: 'Please select your Preferred Notification Channel' } });
+        self.selectedGMMChannel = ko.observable().extend({ required: { message: 'Please select your Preferred Visual Assistance Channel' } });
+        self.chat2Video = ko.observable().extend({ required: { message: 'Please select your if you want to allow Escalation from Chat to Audio and Video' } });
+        self.errors = ko.validation.group(self);
+        self.init = function(params) {
+            var customer = params.customer;
+            var env = params.env;
+            self.country(customer && customer['user.country']);
+            self.phone(customer && customer['customer.customer_phone']);
+            self.email(customer && customer['customer.email1']);
+            self.env(env && env.GDemoHost);
+        };
+        self.load = function() {
+            $.processing('show', { delay: 0 });
+            $.get($.siteData.siteRoot + '/channels')
+            .done(function(data) {
+                self.selectedChannel(data.channelId);
+                self.selectedGMMChannel(data.gmmChannel);
+                self.chat2Video(data.chat2Video);
+            }).fail(function(xhr) {
+                displayAjaxError(xhr);
+            }).always(function() {
+                $.processing('hide');
+            });
+        };
+        self.sendMessage = function() {demoProcess.sendMessage(self.msgText(), self.selectedChannel(), self.addSurvey());};
+        self.showJourney = function() {demoProcess.showJourney();};
+        self.cleanJourney = function() {demoProcess.cleanJourney('close-all');};
+        self.deleteJourney = function() {demoProcess.cleanJourney('delete-all');};       
+        self.saveChannels = function() {
+            self.errors.showAllMessages();
+            if (self.errors().length > 0) {
+                return;
+            }
+            $.processing('show', { delay: 0 });
+            $.post($.siteData.siteRoot + '/channels', {
+                channel: self.selectedChannel(),
+                gmmChannel: self.selectedGMMChannel(),
+                chat2Video: self.chat2Video()
+            }).done(function(data) {
+                $.alert(demoProcess.getString('ChannelsSaved'));
+            }).fail(function(xhr) {
+                displayAjaxError(xhr);
+            }).always(function() {
+                $.processing('hide');
+            });
+        };
+        self.init(params);
+    }
+
+    function SurveyViewModel(parent) {
+        var self = this;
+        
+        self.rate = ko.observable();
+        self.comment = ko.observable().extend({ required: true });
+        self.errors = ko.validation.group(self);
+        self.submit = function() {
+            self.errors.showAllMessages();
+            if (self.errors().length > 0) {
+                $('.input-validation-error:first').focus();
+                return;
+            }
+
+            var params = { rate: self.rate(), comment: self.comment() };
+            executeCallback('submitSurvey', self, params);
+        };
+    }
+
+    function LanguageViewModel(key, name) {
+        var self = this;
+
+        self.key = key === 'default' ? '' : key;
+        self.name = name;
+    }
+
+    function ViewModel(params) {
+        var self = this;
+
+        self.customer = ko.mapping.fromJS(params.customer || {});
+        self.environment = ko.mapping.fromJS(params.env || {});
+        self.authenticated = ko.observable(params.authenticated || false);
+        self.fullName = ko.pureComputed(function() {
+            if (!self.authenticated()) {
+                return '';
+            }
+            var customer = self.customer || { };
+            var firstName = ko.utils.unwrapObservable(customer['user.first_name']) || '';
+            var lastName = ko.utils.unwrapObservable(customer['user.last_name']) || '';
+            return customer ? firstName + ' ' + lastName : '';
+        });
+
+        self.loginModel = new LoginViewModel(self);
+        self.purchaseViewModel = new PurchaseViewModel(self, params.purchaseFields);
+        self.claimViewModel = new ClaimViewModel(self);
+        self.myAccountViewModel = new MyAccountViewModel(self, params);
+        self.surveyViewModel = new SurveyViewModel(self);
+        self.residentialViewModel = new ResidentialViewModel(self);
+        self.shopViewModel = new ShopViewModel(self);
+        self.productViewModel = new ProductViewModel(self);
+        self.faqViewModel = new FaqViewModel(self);
+
+        self.menus = ko.observableArray(ko.utils.arrayMap(params.menuItems || [], function(item) {
+            return new MenuItemViewModel(item);
+        }));
+        self.selectedMenuItem = ko.observable();
+        self.selectMenuItem = function(hash) {
+            var selectedMenu = ko.utils.arrayFirst(model.menus(), function(item) {
+                return item.href === hash;
+            });
+            model.selectedMenuItem(selectedMenu);
+        };
+
+        self.searchString = ko.observable();
+        
+        self.views = [
+            new PartialViewViewModel({
+                name: 'home',
+                title: 'Home',
+                template: 'homeTemplate',
+                model: {},
+                onActivate: function() {
+                   var slider = $('#home-banner .banner');
+                   slider.unslider({autoplay: true, delay: 7000, nav: true, arrows: false});
+                   $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+                   $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+                }
+            }),
+            new PartialViewViewModel({
+                name: 'login',
+                title: 'Login',
+                template: 'loginTemplate',
+                model: self.loginModel,
+                onActivate: function() {
+                    $(self.loginModel.usernameElement()).focus()
+                        .parent('form')[0].reset();
+                    
+                }
+            }),
+            new PartialViewViewModel({
+                name: 'register',
+                title: 'Register',
+                template: 'registerTemplate',
+                model: {}
+            }),
+            new PartialViewViewModel({
+                name: 'contactus',
+                title: 'Contact Us',
+                template: 'contactUsTemplate',
+                model: {}
+            }),
+            new PartialViewViewModel({
+                name: 'purchase',
+                title: 'Purchase',
+                template: 'purchaseTemplate',
+                model: self.purchaseViewModel,
+                onActivate: function() {
+                    self.purchaseViewModel.activate();
+                }
+            }),
+            new PartialViewViewModel({
+                name: 'claim',
+                title: 'Claim',
+                template: 'claimTemplate',
+                model: self.claimViewModel
+            }),
+            new PartialViewViewModel({
+                name: 'myAccount',
+                title: 'My Account',
+                template: 'myAccountTemplate',
+                model: self.myAccountViewModel,
+                authRequired: true,
+                onActivate: function() {
+                    $(self.myAccountViewModel.load());
+                }
+            }),
+            new PartialViewViewModel({
+                name: 'learning',
+                title: 'Learning',
+                template: 'learningTemplate',
+                model: {}
+            }),
+            new PartialViewViewModel({
+                name: 'search',
+                title: 'Search',
+                template: 'searchTemplate',
+                model: {
+                    searchString: self.searchString
+                }
+            }),
+            new PartialViewViewModel({
+                name: 'survey',
+                title: 'Survey',
+                template: 'surveyTemplate',
+                model: self.surveyViewModel
+            }),
+            new PartialViewViewModel({
+                name: 'residential',
+                title: 'Residential',
+                template: 'residentialTemplate',
+                model: self.residentialViewModel,
+                onActivate: function() {
+                    self.residentialViewModel.activate();
+                 }
+            }),
+            new PartialViewViewModel({
+                name: 'shop',
+                title: 'Shop',
+                template: 'shopTemplate',
+                model: self.shopViewModel,
+                onActivate: function() {
+                    $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+                    $.HSCore.components.HSCubeportfolio.init('.cbp');
+                    self.shopViewModel.activate();
+                 },
+                onSelectItem:function(){
+                    console.log('Test: ' + this);
+                }
+            }),
+            new PartialViewViewModel({
+                name: 'product',
+                title: 'Product',
+                template: 'productTemplate',
+                model: self.productViewModel,
+                onActivate: function() {
+                    $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+                    self.productViewModel.activate();
+                 }
+            }),
+            new PartialViewViewModel({
+                name: 'faq',
+                title: 'FAQ',
+                template: 'faqTemplate',
+                model: self.faqViewModel,
+                onActivate: function() {
+                    $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+                    self.faqViewModel.activate();
+                 }
+            })
+        ];
+        
+        self.homeView = self.views[0];
+        self.currentView = ko.observable();
+
+        var oldView;
+        self.currentView.subscribe(function(view) {
+            oldView = view;
+        }, self, 'beforeChange');
+        self.currentView.subscribe(function(view) {
+            if (oldView && $.isFunction(oldView.onDeactivate)) {
+                oldView.onDeactivate();
+            }
+            if (view && $.isFunction(view.onActivate)) {
+                window.setTimeout(function() {
+                    view.onActivate();
+                }, 25);
+            }
+
+            document.title = $.siteData.appTitle + ' - ' + view.title;
+            let hash = location.hash || '#',
+                viewTitle;
+            $.each($.siteData.menuItems, function(index, obj){
+                if (obj.href == hash) {
+                    document.title = obj.label;
+                }
+            });
+        });
+        self.findView = function(name) {
+            return ko.utils.arrayFirst(self.views, function(view) {
+                return view.name.toLowerCase() === name.toLowerCase();
+            });
+        };
+        self.showHomeView = function() {
+            self.currentView(self.homeView);
+            //location.href = location.href.substr(0, window.location.href.indexOf('#'));
+            location.hash = '';
+        };
+        self.animatePageChange = function(elements) {
+            var div = ko.utils.arrayFirst(elements, function(item) {
+                return item.tagName === 'DIV';
+            });
+            if (div === null) {
+                return;
+            }
+            $(div).hide().fadeIn(500);
+        };
+        
+        self.setAuthenticated = function(data) {
+            self.customer = ko.mapping.fromJS(data.customer || {});
+            self.environment = ko.mapping.fromJS(data.env || {});
+            self.authenticated(true);
+            self.myAccountViewModel.init(data);
+            self.showHomeView();
+        };
+
+        function parseLocation() {
+            var re = new RegExp($.siteData.siteRoot + '/([\\w-_]+)(?:/(\\w+))?/home(?:$|#)');
+            var res = re.exec(location.href);
+            if (res === null) {
+                return null;
+            }
+            
+            var vertical = res[1];
+            var language = res[2];
+            var len = $.siteData.siteRoot.length + vertical.length + 2;
+            var part1 = location.href.substring(0, res.index + len);
+            if (language) {
+                len += language.length + 1;
+            }
+            var part2 = location.href.substring(res.index + len, location.href.length);
+            
+            return {
+                vertical: vertical,
+                language: language,
+                urlTemplate: part1 + '{0}' + part2
+            };
+        }
+
+        function getCurrentLanguage() {
+            var res = parseLocation();
+            return res && res.language ? res.language : '';
+        }
+        
+        self.availableLanguages = [];
+        self.selectedLanguage = ko.observable(getCurrentLanguage());
+        self.selectedLanguage.subscribe(function(newLanguage) {
+            var res = parseLocation();
+            if (res === null) {
+                return;
+            }
+
+            var url = res.urlTemplate.replace('{0}', newLanguage ? newLanguage + '/' : '');
+            location.href = url;
+        });
+        $.each(params.languages, function(key, value) {
+            self.availableLanguages.push(new LanguageViewModel(key, value));
+        });
+        self.languagesExpanded = ko.observable(false);
+        self.toggleLanguages = function() {
+        	if (self.languagesExpanded()) {
+        		self.languagesExpanded(false);
+        	} else {
+        		self.languagesExpanded(true);
+        	}
+        };
+        self.selectLanguage = function(key) {
+        	self.selectedLanguage(key);
+        };
+        
+        self.search = function(form) {
+            var searchString = $(form).find('#search-kc').val();
+            if (!searchString) {
+                return;
+            }
+            self.searchString(searchString);
+            if ($.siteData.authenticated && widgetCX.isActivated()) {
+                widgetCX.search(searchString);
+            }
+            else {
+                demoProcess.loginAlert();
+            }
+            //location.hash = '#search';
+        };
+    }
+
+    var model = new ViewModel($.siteData)
+
+    $(window).bind('hashchange', function(e) {
+        var viewName = location.hash !== '' ? location.hash.substring(1) : '';
+        var view = model.findView(viewName);
+        if (view == null) {
+            view = model.homeView;
+        }
+        if (!model.authenticated() && view.authRequired) {
+            view = model.homeView;
+        }
+        model.currentView(view);
+        $('body').scrollTop(0);
+        
+        var hash = location.hash || '#';
+        if (hash === '#home') {
+            hash = '#';
+        }
+        model.selectMenuItem(hash);
+        
+        // GWE page upgdate
+        if (typeof _gt !== 'undefined') {
+            _gt.push(['config', { page: {
+                    url: location.href,
+                    title: view.title
+                }
+            }]);
+            _gt.push(['event', 'PageEntered']);
+        }
+
+        _gAnalytics.page();
+        if (typeof ac == 'function') {
+            ac('pageview');
+        }
+
+/*        
+        if (viewName === 'login') {
+            if (!model.authenticated()) {
+                view = viewName;
+                title = 'Login';
+            }
+        } else if (viewName === 'contactus') {
+            view = 'contactUs';
+            title = 'Contact Us';
+        } else {
+            view  = 'home';
+        }
+
+        model.activeView(view);
+        document.title = $.siteData.appName + ' - ' + title;
+*/        
+    }).trigger('hashchange');
+    
+    ko.validation.init({ 
+        insertMessages: true,
+        decorateInputElement: true,
+        errorElementClass: 'input-validation-error',
+        messagesOnModified: true,
+        decorateElementOnModified: true
+    });
+
+    ko.setTemplateEngine(new ko.nativeTemplateEngine());
+    ko.applyBindings(model);
+    
+    window.setInterval(function() {
+        $.get($.siteData.siteRoot + '/heartbeat', function(data) {
+            if (!data.authenticated && model.authenticated() !== data.authenticated) {
+                model.authenticated(false);
+            }
+        }).fail(function(xhr) {
+            if (model.authenticated()) {
+                model.authenticated(false);
+            }
+        });
+    }, 15000);
+    
+})(jQuery, ko);

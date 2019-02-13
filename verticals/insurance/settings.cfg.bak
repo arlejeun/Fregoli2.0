@@ -1,0 +1,13 @@
+{
+	vertical: 'insurance',
+    storyUrl: '//demo.genesyslab.com/gdemo_mobile/story/',
+    storyUser: 'fregoli',
+    storyId: 'ginsurance',
+    language: 'en-US',
+	widget_color: '#186eb9',
+	gsg_callback: 'CallbackV2_VQ',
+	template: 'ginsurance',
+	inbound_number: '(650)360-1715',
+	gkc_db: 'insurance',
+	ga_id: 'UA-96578139-1'
+}

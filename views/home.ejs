@@ -1,0 +1,235 @@
+<%
+	var home = verticalConfig.home || {};
+	var carousel = home.carousel || [];
+	var features = home.features || {};
+	var details = home.details || {};
+	var assets = home.assets || {};
+	var reviews = home.reviews || {};
+%>
+<script id="homeTemplate" type="text/html">
+<div id="home-banner">
+	<div class="banner">
+		<ul>
+			<% var index = 1; carousel.forEach(item => {
+				var button = item.button || {}
+			%>
+			<li>
+				<div class="slide-item" id="slide-image-<%=index++%>">
+					<div class="msg-filter"></div>
+					<div class="banner-msg page-width">
+						<div class="msg-container">
+							<div>
+								<h1><%=item.title%></h1>
+								<h2><%=item.subtitle%></h2>
+							</div>
+							<div>
+								<%-markdown(item.text)%>
+								<button class="fg-btn slider-btn" data-href="<%=button.href%>"><%=button.label%></button>
+							</div>
+						</div>
+						<div class="banner-icon-list">
+							<%	var bannerIcons = item.banner_icons || []
+								bannerIcons.forEach(icon => { %>
+							<div class="icon"><img src="<%=verticalPath%>/images/home/<%=icon%>"></div>
+							<% }) %>
+						</div>
+					</div>
+				</div>
+			</li>
+			<% }) %>
+		</ul>
+	</div>
+</div>
+<% if (features.show) { %>
+<div id="demand-gen">
+	<div class="page-width">
+		<h2><%=features.title%></h2>
+		<p><%=features.subtitle%></p>
+		<div class="promo-container">
+			<% var index = 1; var items = features.items || [];
+				items.forEach(item => {
+					var button = item.button || { label: 'Label' }
+			%>
+			<div class="promo">
+				<div class="fixed-aspect">
+					<div class="stretchy-wrapper">
+						<div id="feature-image-<%=index++%>"></div>
+					</div>
+				</div>
+				<h3><%=item.title%></h3>
+				<%-markdown(item.text)%>
+				<button class="feature-btn" data-href="<%=button.href%>"><%=button.label%></button>
+			</div>                
+			<% }) %>
+		</div>
+	</div>
+</div>
+<% }
+if (details.show) { %>
+	<div id="products">
+		<div class="page-width">
+			<h2><%=details.title%></h2>
+			<p><%=details.subtitle%></p>
+			<% var index = 1; var items = details.items || [];
+				items.forEach(item => {
+					var image = item.image || `details${index}.png`;
+					index++;
+			%>
+			<div class="product">
+				<a href="<%=item.href || '#'%>"><img src="<%=verticalPath%>/svg/home/<%=image%>" /></a>
+				<h3><%=item.title%></h3>
+				<p>
+					<%-markdown(item.text)%>
+				</p>
+			</div>                
+			<% }) %>
+		</div>
+	</div>
+<% } %>
+
+<% if (reviews.show) { %>
+	<div id="reviews-gen">
+		
+		<!-- Testimonials -->
+		<div class="bg-light">
+				<div class="promo-container container space-1 space-md-1">
+				  <!-- Title -->
+				  <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+					<figure id="icon4" class="max-width-10 mx-auto mb-3">
+					  <img class="js-svg-injector" src="<%=verticalPath%>/svg/icons/icon-4.svg" alt="SVG"
+						   data-parent="#icon4">
+					</figure>
+					<h2 class="font-weight-medium"><%=reviews.title%></h2>
+				  </div>
+				  <!-- End Title -->
+		  
+				  <!-- Slick Carousel -->
+				  <div class="js-slick-carousel u-slick u-slick--equal-height u-slick--gutters-3"
+					   data-slides-show="3"
+					   data-autoplay="true"
+					   data-speed="5000"
+					   data-infinite="true"
+					   data-center-mode="true"
+					   data-pagi-classes="d-lg-none text-center u-slick__pagination mt-7 mb-0"
+					   data-responsive='[{
+						 "breakpoint": 992,
+						 "settings": {
+						   "slidesToShow": 2
+						 }
+					   }, {
+						 "breakpoint": 768,
+						 "settings": {
+						   "slidesToShow": 1
+						 }
+					   }]'>
+
+					<% var index = 1; var items = reviews.items || [];
+						items.forEach(item => {
+							var image = item.image || `reviews${index}.png`;
+							index++;
+					%>
+					
+
+					<div class="js-slide card mb-1">
+					  <!-- Testimonial -->
+					  <div class="card-body p-5">
+						<div class="mb-auto">
+						  <p class="mb-0"><%=item.text%></p>
+						</div>
+					  </div>
+		  
+					  <div class="card-footer border-0 pt-0 px-5 pb-5">
+						<div class="media">
+						  <div class="u-avatar mr-3">
+							<img class="img-fluid rounded-circle" src="<%=verticalPath%>/images/100x100/<%=image%>" alt="Image Description">
+						  </div>
+						  <div class="media-body">
+							<h4 class="h6 mb-1"><%=item.title%></h4>
+							<ul class="list-inline text-warning small mb-0">
+							  <li class="list-inline-item mx-0">
+								<span class="fas fa-star"></span>
+							  </li>
+							  <li class="list-inline-item mx-0">
+								<span class="fas fa-star"></span>
+							  </li>
+							  <li class="list-inline-item mx-0">
+								<span class="fas fa-star"></span>
+							  </li>
+							  <li class="list-inline-item mx-0">
+								<span class="fas fa-star"></span>
+							  </li>
+							  <li class="list-inline-item mx-0">
+								<span class="fas fa-star"></span>
+							  </li>
+							</ul>
+						  </div>
+						</div>
+					  </div>
+					  <!-- End Testimonial -->
+					</div>
+				
+					<% }) %>
+
+				  </div>
+				  <!-- End Slick Carousel -->
+				</div>
+			  </div>
+			  <!-- End Testimonials -->
+
+	</div>
+
+<% } %>
+
+
+<% if (assets.show) { %>
+	<div id="assets-gen">
+		<div class="page-width">
+			<h2><%=assets.title%></h2>
+			<p><%=assets.subtitle%></p>
+			<div class="promo-container">
+				<% var index = 1; var items = assets.items || [];
+					items.forEach(item => {
+						var button = item.button || { label: 'Label' }
+				%>
+				<div class="promo">
+					<div class="fixed-aspect">
+						<div class="stretchy-wrapper">
+							<div id="asset-image-<%=index++%>"></div>
+						</div>
+					</div>
+					<h3><%=item.title%></h3>
+					<%-markdown(item.text)%>
+					<button class="feature-btn" data-href="<%=button.href%>"><%=button.label%></button>
+				</div>                
+				<% }) %>
+			</div>
+		</div>
+	
+</div>
+<% } %>
+
+</script>
+
+<script type="text/javascript">
+		
+       $(window).on('load', function () {
+          // initialization of svg injector module
+		});
+		
+        $(document).ready(function(){
+						
+			var slider = $('#home-banner .banner');
+			slider.unslider({autoplay: true, delay: 7000, nav: true, arrows: false});
+			$('button.slider-btn, button.feature-btn').click(function() {
+				var url = $(this).data('href');
+				if (url) {
+					location.href = url;
+				}
+				return false;
+			});
+		});
+
+		
+
+
+</script>

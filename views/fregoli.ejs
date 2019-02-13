@@ -1,0 +1,23 @@
+<% layout('layout') %>
+
+<% include header.ejs %>
+<div class="main-container">
+	<div data-bind="template: { name: 'currentTmpl', data: currentView, afterRender: animatePageChange }"></div> 
+</div> <!-- #main-container -->
+<% include footer.ejs %>
+<script id="currentTmpl" type="text/html">
+  <div data-bind="template: { name: getTemplate, data: model }"></div> 
+</script>
+<% include home.ejs %>
+<% include login.ejs %>
+<% include register.ejs %>
+<% include contactUs.ejs %>
+<% include purchase.ejs %>
+<% include claim.ejs %>
+<% include myAccount.ejs %>
+<% include learning.ejs %>
+<% include search.ejs %>
+<% include survey.ejs %>
+<% include residential.ejs %>
+<% include shop.ejs %>
+<% include faq.ejs %>

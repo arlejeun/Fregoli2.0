@@ -1,0 +1,216 @@
+@media screen and (max-width: 1140px){
+	.right-header .top-bar .phone-number{
+		display: none;
+	}
+
+	.right-header .top-bar .login-btn{
+		margin-left: 0;
+	}
+
+	.right-header .top-bar .search-box{
+		margin-left: 0;
+	}
+
+	.left-header{
+		height: 60px;
+		width: 30%;
+	}
+
+	.img-logo{
+		height: 35px;
+		position: absolute;
+	}
+
+	.right-header{
+		width: 70%;
+	}
+
+	.right-header .bottom-bar{
+		position: absolute;
+		width: 700px;
+		display: inline-block;
+		left: 0;
+		right: 0;
+		text-align: center;
+	}
+
+	.right-header .bottom-bar .nav-list {
+		display: inline-block;
+		text-align: left;
+	}
+
+	.page-width{
+		width: 700px;
+		position: relative;
+	}
+
+	.footer-links .list{
+		margin: 1em 2em 1em 0em;
+	}
+
+	.col-2 {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 800px){
+	.footer-links{
+		max-width: 350px;
+	}
+
+	.main-container .upper-div{
+		max-width: 350px;
+		margin: auto;
+	}
+	
+	.footer-links .list{
+		display: inline-block;
+		float: none;
+		text-align: left;
+		margin: 1em 1em 0em 1em;
+	}
+}
+
+@media screen and (max-width: 735px){
+	.right-header, .bottom-bar{
+		display: none;
+	}
+	.left-header{
+		margin: 0px;
+		width: 100%;
+		height: 100%;
+	}
+	.img-logo{
+		left: 0;
+		right: 0;
+		height: 40%;
+	}
+
+	.mobile-nav-list{
+		background-color: #666666;
+		color: white;
+		position: fixed;
+		left: -200px;
+		top: 0;
+		height: 100%;
+		width: 200px;
+		z-index: 25;
+		display: block;
+		transition: 0.25s;
+		box-sizing: border-box;
+		overflow-y: auto;
+	}
+
+	.mobile-nav-list ul{
+		height: auto;
+		overflow: hidden;
+		transition: 0.5s;
+	}
+	.mobile-nav-list li{
+		display: block;
+		text-align: center;
+		border-bottom: 1px solid #999;
+		border-collapse: collapse;
+	}
+	.mobile-nav-list li a{
+		color: white;
+		font-size: 14px;
+		font-weight: bold;
+	}
+	
+	.mobile-menu-btn{
+		text-align: center;
+		width: 40px;
+		height: 40px;
+		position: fixed;
+		line-height: 40px;
+		left: 20px;
+		top: 24px;
+		background-color: #666666;
+		color: #fff;
+		font-size: x-large;
+		z-index: 20;
+	}
+	
+	.page-width{
+		width: 320px;
+	}
+
+	#demand-gen .promo{
+		width: 100%;
+	}
+
+	#demand-gen .promo-container{
+		height: auto;
+	}
+
+	#assets-gen .promo{
+		width: 100%;
+	}
+
+	#assets-gen .promo-container{
+		height: auto;
+	}
+
+	#products .product{
+		width: 100%;
+	}
+
+	.banner-msg .msg-container{
+		width: 100%;
+		padding-top: 1em;
+	}
+	.banner-msg .msg-container h1{
+		font-size: 1.5em;
+	}
+	.banner-msg .msg-container h2{
+		font-size: 1.2em
+	}
+	.banner-msg .msg-container p{
+		font-size: 1em;
+		font-weight: 200;
+	}
+	.banner-msg .msg-container button{
+		position: relative;
+		bottom: -1em;
+	}
+
+	.banner-msg .icon{
+		width: 50px;
+		height: 50px;
+	}
+
+	.msg-filter{
+		width: 100%;
+		filter: blur(5px) brightness(0.6);
+		-webkit-filter: blur(5px) brightness(0.6);
+		background-size: cover;
+	}
+
+	#mortgage-loan .msg-filter{
+	    background: url('../images/homepage/mortgage_loan.jpg') no-repeat center top;
+	}
+
+	#checking-saving .msg-filter{
+	    background: url('../images/homepage/checking_saving.jpg') no-repeat center top;
+	}
+	#investment .msg-filter{
+	    background: url('../images/homepage/investment.jpg') no-repeat center top;
+	}
+
+	#mortgage-loan.slide-item,#checking-saving.slide-item,#investment.slide-item{
+		background: none;
+	}
+
+	.survey-form button {
+		margin-top: 1em;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 550px){
+.page-width{
+	padding: 0 1em;
+}
+
+}

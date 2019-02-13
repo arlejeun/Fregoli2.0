@@ -1,0 +1,2 @@
+###SHOP 
+Your home is probably your most valuable financial investment. But it's so much more than that! Your home represents your family, your lifestyle, your escape from the world outside, and that reward for years of hard work and dedication. And we understand how vital it is to protect that. That's why we've spent 85 years building a Smarter Choice in Home Insurance. With G-Home Insurance, you get so much more than just coverage. WELCOME TO OUR SHOP!

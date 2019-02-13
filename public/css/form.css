@@ -1,0 +1,198 @@
+/****Form****/
+
+/*--- contact_form ------*/
+.contact-form {
+	position: relative;
+}
+.contact-form label {
+	position: relative;
+	/*!*/
+	display: block;
+	min-height: 25px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+	width: 80%;
+	box-shadow: none;
+}
+.contact-form label.message{width: 100%;}
+.contact-form span {display: block;}
+.contact-form ._placeholder {
+	position: absolute;
+	/*!*/
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	cursor: text;
+	padding: 8px 10px 8px 11px;
+	font: 13px/24px "Ubuntu", Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color: #83868a;
+	display: block;
+}
+.contact-form ._placeholder.focused {
+	opacity: .4;
+	filter: alpha(opacity=40);
+	/*.box-shadow(0px 0px 7px 0px rgba(0, 0, 255, 0.5));*/
+}
+.contact-form ._placeholder.hidden {
+	display: none;
+}
+.contact-form input:not([type=checkbox]):not([type=radio]),
+.contact-form textarea {
+	outline: none;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0px 10px 0px 8px;
+	font: 13px/24px "Ubuntu", Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color: #444;
+	border: 1px #bcbcbc solid;
+	width: 100%;
+	background: #fff;
+	box-shadow: none;
+	-webkit-appearance: none;
+	resize: none;
+	height: 28px;
+}
+.contact-form textarea {
+	width: 100%;
+	height: 115px;
+	margin-bottom: 0;
+}
+.contact-form .message {
+	width: 100%;
+}
+.contact-form .error-message,
+.contact-form .empty-message {
+	height: 0;
+	overflow: hidden;
+	font: 10px/20px Arial;
+	-webkit-transition: 0.3s ease-in height;
+	-moz-transition: 0.3s ease-in height;
+	-o-transition: 0.3s ease-in height;
+	transition: 0.3s ease-in height;
+	position: absolute;
+	right: 3px;
+	top: 0;
+}
+.contact-form .invalid .error-message,
+.contact-form .empty .empty-message {
+	height: 20px;
+}
+.contact-form .success-message {
+	position: absolute;
+	overflow: hidden;
+	height: 0;
+	left: 0;
+	top: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	background: #FFF;
+	z-index: 10;
+	width: 66%;
+	text-align: center;
+	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+	padding: 0px 0;
+}
+.contact-form.success .success-message {
+	height: 142px;
+	padding: 60px 0;
+	border: 1px #bcbcbc solid;
+	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+}
+.form_btns {
+	display: block;
+	float: right;
+}
+.form_btns a {
+	/* margin-right: 40px; */
+	margin-top: 12px;
+}
+/*--- contact_form end------*/
+
+@media only screen and (max-width: 995px) {
+	.contact-form {padding-top: 0;}
+	.contact-form label {width: 100%;}
+	.contact-form .success-message {width: 100%;}
+
+}
+
+
+@media only screen and (max-width: 767px) {
+	.contact-form textarea {height: 300px !important;}
+	
+}
+@media only screen and (max-width: 479px) {
+	.contact-form textarea {height: 200px !important;}
+}
+
+.form-wrapper {
+	margin-top: 12px;
+	background: #f1f1f1;
+	padding: 20px 30px 10px 20px;
+	border: 2px solid #bcbcbc;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+div.buttons {
+	padding-top: 0px;
+	text-align: right;
+}
+
+fieldset {
+	border: 1px #bcbcbc solid;
+	padding: 0 8px 12px 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+legend {
+	padding: 8px;
+}
+
+form .error {
+	color: #c00;
+	font-weight: bold;
+}
+
+form label.error {
+	display: none;
+}
+
+select {
+	outline: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #444;
+	border: 1px #bcbcbc solid;
+	background: #fff;
+	box-shadow: none;
+}
+
+select.custom {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	font: 13px/24px "Ubuntu", Arial, "Helvetica Neue", Helvetica, sans-serif;
+	height: 28px;
+}
+
+label.error {
+	color: red;
+}

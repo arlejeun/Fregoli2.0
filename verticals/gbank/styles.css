@@ -1,0 +1,115 @@
+html {
+  color: #666; }
+
+html, body {
+  background-color: #ececec; }
+
+a {
+  color: #c33; }
+
+a:hover {
+  color: #661a1a; }
+
+div.header-container {
+  background-color: #fff;
+  color: #666;
+  z-index: 10;
+  position: fixed;
+  top: 0px; }
+
+.nav-list * {
+  color: #666; }
+
+.nav-list li.selected {
+  background-color: #c33; }
+
+.nav-list li.selected a {
+  color: #fff; }
+
+.bottom-bar .nav-list li:not(.selected) a:hover {
+  border-bottom: 3px solid #666;
+  color: #666; }
+
+.mobile-menu-btn {
+  background-color: #666; }
+
+@media screen and (max-width: 735px) {
+  .mobile-nav-list {
+    background-color: #666; } }
+
+div.footer-container {
+  background-color: #666;
+  color: #fff; }
+
+.fg-form label {
+  color: gray; }
+
+.fg-btn {
+  background-color: #c33;
+  color: white;
+  border: 2px solid white; }
+
+.fg-btn:enabled:hover {
+  background-color: #ad1f1f; }
+
+.fg-btn:disabled {
+  background-color: #e08585;
+  border-color: #d65c5c;
+  cursor: not-allowed; }
+
+.search-icon {
+  background: url("images/header/search-icon.png") no-repeat;
+  background-position: center center;
+  background-size: 100%; }
+
+.right-header .top-bar .phone-number i {
+  background: url("images/header/phone-icon.png") no-repeat;
+  background-color: #c33;
+  background-position: bottom center;
+  background-size: 67%; }
+
+#slide-image-1 {
+  background: url("images/home/mortgage_loan.jpg") no-repeat center top;
+  background-size: cover;
+  overflow: hidden; }
+
+#slide-image-2 {
+  background: url("images/home/checking_saving.jpg") no-repeat center top;
+  background-size: cover;
+  overflow: hidden; }
+
+#slide-image-3 {
+  background: url("images/home/investment.jpg") no-repeat center top;
+  background-size: cover;
+  overflow: hidden; }
+
+#feature-image-1 {
+  background-image: url("images/home/house.jpg");
+  background-position: center top; }
+
+#feature-image-2 {
+  background-image: url("images/home/sign.jpg");
+  background-position: center top; }
+
+#feature-image-3 {
+  background-image: url("images/home/coins.jpg");
+  background-position: center bottom; }
+
+/* Home View */
+#demand-gen {
+  background-color: #ececec; }
+
+#products {
+  background-color: #fff; }
+
+#demand-gen .promo button:hover {
+  background-color: #8f2424;
+  color: white; }
+
+/* End Home View */
+.custom-alert-icon {
+  color: #c33; }
+
+/* Background*/
+html, body, #demand-gen, .main-container {
+  background: url(images/background.png); }

@@ -1,0 +1,115 @@
+html {
+  color: #333399; }
+
+html, body {
+  background-color: #c8dcff66; }
+
+a {
+  color: #ff4e1e; }
+
+a:hover {
+  color: #9e2200; }
+
+div.header-container {
+  background-color: #f6f6f6;
+  color: #333399;
+  z-index: 10;
+  position: fixed;
+  top: 0px; }
+
+.nav-list * {
+  color: #333399; }
+
+.nav-list li.selected {
+  background-color: #ff4e1e; }
+
+.nav-list li.selected a {
+  color: #f6f6f6; }
+
+.bottom-bar .nav-list li:not(.selected) a:hover {
+  border-bottom: 3px solid #333399;
+  color: #333399; }
+
+.mobile-menu-btn {
+  background-color: #333399; }
+
+@media screen and (max-width: 735px) {
+  .mobile-nav-list {
+    background-color: #333399; } }
+
+div.footer-container {
+  background-color: #333399;
+  color: #f6f6f6; }
+
+.fg-form label {
+  color: #4040bf; }
+
+.fg-btn {
+  background-color: #ff4e1e;
+  color: white;
+  border: 2px solid white; }
+
+.fg-btn:enabled:hover {
+  background-color: #ea3200; }
+
+.fg-btn:disabled {
+  background-color: #ff9e84;
+  border-color: #ff7651;
+  cursor: not-allowed; }
+
+.search-icon {
+  background: url("images/header/search-icon.png") no-repeat;
+  background-position: center center;
+  background-size: 100%; }
+
+.right-header .top-bar .phone-number i {
+  background: url("images/header/phone-icon.png") no-repeat;
+  background-color: #ff4e1e;
+  background-position: bottom center;
+  background-size: 67%; }
+
+#slide-image-1 {
+  background: url("images/home/man.jpg") no-repeat center top;
+  background-size: cover;
+  overflow: hidden; }
+
+#slide-image-2 {
+  background: url("images/home/solar.jpg") no-repeat center top;
+  background-size: cover;
+  overflow: hidden; }
+
+#slide-image-3 {
+  background: url("images/home/city.jpg") no-repeat center top;
+  background-size: cover;
+  overflow: hidden; }
+
+#feature-image-1 {
+  background-image: url("images/home/house.jpg");
+  background-position: center top; }
+
+#feature-image-2 {
+  background-image: url("images/home/sign.jpg");
+  background-position: center top; }
+
+#feature-image-3 {
+  background-image: url("images/home/coins.jpg");
+  background-position: center bottom; }
+
+/* Home View */
+#demand-gen {
+  background-color: #c8dcff66; }
+
+#products {
+  background-color: #f6f6f6; }
+
+#demand-gen .promo button:hover {
+  background-color: #d12c00;
+  color: white; }
+
+/* End Home View */
+.custom-alert-icon {
+  color: #ff4e1e; }
+
+/* Background*/
+html, body, #demand-gen, .main-container {
+  background: url(images/background.png); }

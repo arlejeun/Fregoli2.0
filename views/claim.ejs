@@ -1,0 +1,42 @@
+<%
+	var claim = verticalConfig.claim || {}
+	var form = claim.form || {}
+	var list1 = form.list1 || []
+%>
+<script>
+    var claimAvailableList1 = <%- JSON.stringify(list1) %>;
+</script>
+<script id="claimTemplate" type="text/html">
+<div class="page-width">
+	<div class="container">
+		<div class="col-2">
+            <h2><%=claim.title || 'Claim'%></h2>
+            <h3><%=claim.subtitle || 'Subtitle'%></h3>
+			<%-markdown(claim.text || 'Text with details...')%>
+		</div>
+		<div class="col-2">
+			<h3><%=form.title || 'Form title'%></h3>
+			<div class="form-wrapper">
+			<form id="claim-form" class="fg-form" action="saveClaim" method="post">
+				<div class="form-group">
+					<label><%=form.label1 || 'Reason'%></label>
+					<select data-bind="options: claimAvailableList1,
+										value: reason">
+					</select>
+				</div>
+				<div class="form-group">
+					<label><%=form.label2 || 'Comment'%></label>
+					<textarea style="height: 250px;" data-bind="value: comment"></textarea>
+				</div>
+				<div class="form-group txt_right">
+					<span><%=form.text || 'We will conract to your in 24 hours'%></span>
+				</div>
+				<div class="buttons">
+					<button id="submit" class="fg-btn" data-bind="click: submit"><%=claim.button_label || 'Submit'%></button>
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>
+</script>

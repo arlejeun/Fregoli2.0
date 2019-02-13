@@ -1,0 +1,33 @@
+<%
+	var login = verticalConfig.login || {};
+%>
+<script id="loginTemplate" type="text/html">
+<div class="page-width">
+	<h2><%=login.title || 'Log In'%></h2>
+	<!-- ko if: errorMessage -->
+	<div class="ui-widget">
+		<div class="ui-state-error ui-corner-all" style="padding: 0.4em .7em;">
+			<span data-bind="text: errorMessage"></span>
+		</div>
+	</div>
+	<!-- /ko -->
+	<p class="txt_cntr"><b><%=login.subtitle || 'Please enter your username and password'%></b></p>
+	<div class="form-wrapper login-box">
+		<form action="login" class="fg-form" method="post" data-bind="submit: login">
+			<input type="hidden" name="_csrf" value="<%=csrfToken%>">
+			<label><%=login.username || 'Username'%></label>
+			<input type="text" name="username" data-bind="value: username, element: usernameElement" maxlength="50" autocomplete="off" required="true" />
+			<label><%=login.password || 'Password'%></label>
+			<input type="password" name="password" data-bind="value: password" maxlength="50" required="true" />
+			<div class="buttons">
+				<button class="fg-btn" type="submit"><%=login.button_label || 'Log In'%></button>
+			</div>
+		</form>
+	                
+		<div class="new-account">
+			<i class="fa fa-user-plus fa-fw" aria-hidden="true"></i>
+			<a href="#register"><%=login.request || 'Request New Account'%></a>
+		</div>
+	</div>
+</div>
+</script>

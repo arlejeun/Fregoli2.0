@@ -1,0 +1,10 @@
+<%
+	var learning = verticalConfig.learning || {}
+%>
+<script id="learningTemplate" type="text/html">
+	<div class="page-width">
+		<div class="container">
+			<%-markdown(learning.text)%>
+		</div>
+	</div>
+</script>

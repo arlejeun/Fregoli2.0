@@ -1,0 +1,17 @@
+@import url(//fonts.googleapis.com/css?family=Archivo+Narrow:400);
+@import url(//fonts.googleapis.com/css?family=Archivo+Narrow:700);
+
+.class { behavior:url(js/PIE.htc); position:absolute;}
+.more_btn { behavior:url(js/PIE.htc); position:relative;}
+
+a.magnifier2:hover .zoom{
+	display: block;
+}
+a.magnifier2 .zoom{
+	display: none;
+}
+
+body{min-width: 1060px;}
+
+.marTop3 {margin-top: -3px !important;}
+.contact-form textarea {overflow: hidden;}

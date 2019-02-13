@@ -1,0 +1,203 @@
+html {
+  color: #377dff; }
+
+html, body {
+  background-color: #d6d6d6; }
+
+a {
+  color: #186eb9; }
+
+a:hover {
+  color: #6f42c1; }
+
+div.header-container {
+  background-color: #fff;
+  color: #377dff;
+  z-index: 10;
+  position: fixed;
+  top: 0px; }
+
+.nav-list * {
+  color: #377dff; }
+
+.nav-list li.selected {
+  background-color: #377dff; }
+
+.nav-list li.selected a {
+  color: #fff; }
+
+.bottom-bar .nav-list li:not(.selected) a:hover {
+  border-bottom: 3px solid #377dff;
+  color: #377dff; }
+
+.mobile-menu-btn {
+  background-color: #377dff; }
+  
+div.footer-container {
+  background-color: #377dff;
+  color: #fff; }
+
+.fg-form label {
+  color: #377dff; }
+
+.fg-btn {
+  border: 1px solid white;
+  background-color: #377dff;
+  color:white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.fg-btn:enabled:hover {
+  background-color: #377dff; }
+
+.fg-btn:disabled {
+  background-color: #4fa1e8;
+  border-color: #2289e2;
+  cursor: not-allowed; }
+
+.search-icon {
+  background: url("images/header/search-icon.png") no-repeat;
+  background-position: center center;
+  background-size: 100%; }
+
+.right-header .top-bar .phone-number i {
+  background: url("images/header/phone-icon.png") no-repeat;
+  background-color: #377dff;
+  background-position: bottom center;
+  background-size: 67%; }
+
+#slide-image-1 {
+  background: url("images/home/04-solar-panels.jpg") no-repeat center top;
+  background-size: cover;
+  overflow: hidden; }
+
+#slide-image-2 {
+  background: url("images/home/02-batteries-panneaux-solaires-edf.jpg") no-repeat center top;
+  background-size: cover;
+  overflow: hidden; }
+
+#slide-image-3 {
+  background: url("images/home/00-panneaux-solaires-edf.jpg") no-repeat center top;
+  background-size: cover;
+  overflow: hidden; }
+
+#feature-image-1 {
+  background-image: url("images/home/residential.png");
+  background-position: center top; }
+
+#feature-image-2 {
+  background-image: url("images/home/commercial.png");
+  background-position: center top; }
+
+#feature-image-3 {
+  background-image: url("images/home/utility.png");
+  background-position: center top; }
+
+#asset-image-1 {
+  background-image: url("images/home/property.png");
+  background-position: center top; }
+
+#asset-image-2 {
+  background-image: url("images/home/calculator.png");
+  background-position: center top; }
+
+#asset-image-3 {
+  background-image: url("images/home/milestones.png");
+  background-position: center ; }
+
+/* Home View */
+
+#assets-gen {
+  background-color: #fff; }
+
+#products {
+  background-color: #fff; }
+
+#demand-gen {
+  background-color: #fff;
+}
+
+.label {
+  color: #fff;
+}
+
+#demand-gen .promo button:hover {
+  background-color: #fff;
+  color: #377dff; }
+
+/* End Home View */
+.custom-alert-icon {
+  color: #377dff; }
+
+#assets-gen .promo-container {
+    position: relative;
+    height: 450px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+#reviews-gen .promo-container {
+  margin-bottom: 30px;
+}
+
+#assets-gen .fixed-aspect .stretchy-wrapper > div {
+  background-position: center center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+
+  #demand-gen .promo button {
+    border: 1px solid #377dff;
+    background-color: #377dff;
+    color:white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0 5px 0;
+}
+
+#assets-gen .promo button {
+  border: 1px solid #377dff;
+  background-color: #377dff;
+  color:white;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px 0 5px 0;
+}
+
+#assets-gen p{
+  padding:0 10px;
+}
+
+#assets-gen .promo{
+  position: relative;
+  width: 33%;
+  height: 100%;
+  text-align: center;
+  float: left;
+}
+
+/* Background*/
+html, body, #products, .main-container {
+  background: url(images/background.png); }
+
+@media screen and (max-width: 735px) {
+  .mobile-nav-list {
+    background-color: #377dff; } 
+    #assets-gen .promo{
+      width: 100%;
+    }
+    #assets-gen .promo-container{
+      height: auto;
+    }
+}
+
+/* Shop view */
+.shop-img-intro{
+  height: 100%; 
+  background-image: url(images/home/00-panneaux-solaires-edf.jpg);
+}

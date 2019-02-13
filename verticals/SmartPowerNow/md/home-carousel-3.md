@@ -1,0 +1,1 @@
+Get lower rates over the course of the summer in return for reducing energy use on a handful of days. Find out if this optional rate is right for your business.

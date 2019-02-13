@@ -1,0 +1,21 @@
+catalog: {
+    title: 'Please fill the form',
+    products: [
+        { label: 'Address', price: '$100', desc:'Product 1 desc' , name: 'amount', element: 'input', placeholder: 'Please enter your address...', validation: { required: true } },
+        { label: 'Housing Type', price: '$100', desc:'Product 2 desc', name: 'type', element: 'select', options: ['Appartment', 'Condo', 'House'] },
+        { label: '', price: '$100', desc:'Product 3 desc' , name: 'delivery3', element: 'input', type: 'checkbox', options: ['Primary'], value: ['2 Days Express'] },
+        { label: 'Additional Info', price: '$100', desc: 'Product 4 desc' ,  name: 'text', element: 'textarea'  }
+    ]
+},
+
+
+
+catalog: {
+			title: 'Please fill the form',
+			products: [
+				{ label: 'Address', name: 'amount', element: 'input', placeholder: 'Please enter your address...', validation: { required: true } },
+				{ label: 'Housing Type', name: 'type', element: 'select', options: ['Appartment', 'Condo', 'House'] },
+				{ label: '', name: 'delivery3', element: 'input', type: 'checkbox', options: ['Primary'], value: ['2 Days Express'] },
+				{ label: 'Additional Info', name: 'text', element: 'textarea'  }
+			]
+		},

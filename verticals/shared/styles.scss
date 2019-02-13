@@ -1,0 +1,143 @@
+@import 'vars';
+
+html {
+	color: $font-color;
+}
+
+html, body {
+	background-color: $secondary-color;
+}
+
+a {
+	color: $buttons-color;
+}
+
+a:hover {
+	color: darken($buttons-color, 25%);
+}
+
+div.header-container {
+	background-color: $primary-color;
+	color: $font-color;
+    z-index: 10;
+    position: fixed;
+    top: 0px;
+}
+
+.nav-list * {
+	color: $font-color;
+}
+
+.nav-list li.selected {
+	background-color: $buttons-color;
+}
+
+.nav-list li.selected a {
+	color: $primary-color;
+}
+
+.bottom-bar .nav-list li:not(.selected) a:hover{
+    border-bottom: 3px solid $font-color;
+    color: $font-color;
+}   
+
+.mobile-menu-btn {
+    background-color: $footer-color;
+}
+
+@media screen and (max-width: 735px) {
+	.mobile-nav-list {
+		background-color: $footer-color;
+	}
+}
+
+div.footer-container {
+	background-color: $footer-color;
+	color: $primary-color;
+}
+
+.fg-form label {
+	color: lighten($font-color, 10%);
+}
+
+.fg-btn{
+    background-color: $buttons-color;
+    color: white;
+    border: 2px solid white;
+}
+
+.fg-btn:enabled:hover{
+//    background-color: darken($buttons-color, 15%);
+    $hover-color: saturate($buttons-color, 10%);
+    $hover-color: darken($hover-color, 10%);
+    background-color: $hover-color;
+}
+
+.fg-btn:disabled{
+    background-color: lighten($buttons-color, 20%);
+    border-color: lighten($buttons-color, 10%);
+    cursor: not-allowed;
+}
+
+.search-icon{
+    background: url('images/header/search-icon.png') no-repeat;
+    background-position: center center;
+    background-size: 100%;
+}
+
+.right-header .top-bar .phone-number i{
+    background: url('images/header/phone-icon.png') no-repeat;
+    background-color: $buttons-color;
+    background-position: bottom center;
+    background-size: 67%;
+}
+
+@each $image in $carousel-images {
+	$i: index($carousel-images, $image);
+	#slide-image-#{$i} {
+		background: url('images/home/#{$image}') no-repeat center top;
+		background-size: cover;
+		overflow: hidden;
+	}
+}
+
+#feature-image-1 {
+    background-image: url('images/home/house.jpg');
+    background-position: center top;   
+}
+
+#feature-image-2 {
+    background-image: url('images/home/sign.jpg');
+    background-position: center top;   
+}
+
+#feature-image-3 {
+    background-image: url('images/home/coins.jpg');
+    background-position: center bottom;
+}
+
+/* Home View */
+
+#demand-gen {
+	background-color: $secondary-color;
+}
+
+#products {
+	background-color: $primary-color;
+}
+
+#demand-gen .promo button:hover{
+	background-color: darken($buttons-color, 15%);
+	color: white;
+}
+
+/* End Home View */
+
+.custom-alert-icon {
+	color: $buttons-color;
+}
+
+/* Background*/
+html, body, #demand-gen, .main-container{
+    background: url(images/background.png);    
+}  

@@ -1,0 +1,141 @@
+<%
+    var shop = verticalConfig.shop || {};
+    var carousel = shop.carousel || [];
+    
+%>
+
+
+<script id="shopTemplate" type="text/html">
+
+    <% if (shop.show) { %>
+
+    <div style="background-color:#fff">
+
+            <div id="SVGheroSectionBg" class="svg-preloader position-relative gradient-half-primary-v3">
+                    <div class="container space-2">
+                        <div class="row align-items-lg-center">
+                            <div class="col-lg-5 mb-7 mb-lg-0">
+                                <!-- Info -->
+                                <h1 class="mb-4"><span class="text-primary font-weight-semi-bold"><%=shop.title%></span></h1>
+                                <p><%=shop.subtitle%></p>
+                                <!-- End Info -->
+                                <a class="js-go-to btn text-primary btn-white btn-wide transition-3d-hover" href="#"
+                                    data-target="#shopItemsContent"
+                                    data-type="static">
+                                    Shop Now
+                                    </a>
+                            </div>
+                            <div class="col-lg-7">
+                                <!-- SVG Icon -->
+                                <figure class="ie-we-have-an-idea">
+                                <img class="js-svg-injector" src="<%=verticalPath%>/svg/illustrations/pushing-boundaries.svg" alt="Image Description"
+                                        data-parent="#SVGheroSectionBg">
+                                </figure>
+                                <!-- End SVG Icon -->
+                            </div>
+                        </div>
+                
+                     </div>
+                     
+                
+                        <!-- SVG Background -->
+                    <figure class="position-absolute right-0 bottom-0 left-0">
+                            <img class="js-svg-injector" src="<%=verticalPath%>/svg/components/wave-1-bottom-sm.svg" alt="Image Description"
+                                data-parent="#SVGheroSectionBg">
+                    </figure>
+                    <!-- End SVG Background Section -->
+                </div>
+                <!-- End Hero Section -->
+
+            <main id="content shop-catalog" role="main">
+
+                <div class="page-width">
+                    
+                    <!-- Products Section -->
+                    <div id="shopItemsContent" class="container-fluid u-cubeportfolio py-3">
+                      <!-- Content -->
+                      <div class="cbp"
+                           data-layout="mosaic"
+                           data-animation="quicksand"
+                           data-x-gap="20"
+                           data-y-gap="20"
+                           data-media-queries='[
+                            {"width": 1500, "cols": 4},
+                            {"width": 1100, "cols": 4},
+                            {"width": 800, "cols": 4},
+                            {"width": 480, "cols": 2},
+                            {"width": 300, "cols": 1}
+                          ]'>
+                        
+                            <div id="products">
+                                
+                                
+                                    <% var index = 1; var items = shop.catalog.products || [];
+                                        items.forEach(item => {
+                                            index++;
+                                    %>
+                                    <!-- Item -->
+                                    <div class="cbp-item"> 
+                                        <a class="card card-text-dark cbp-caption" href="single-product.html">
+                                        <img class="card-img-top" src="<%=verticalPath%>/images/shop/<%=item.image%>" alt="Image Description">
+                                        <div class="card-body p-5">
+                                            <h2 class="h5 mb-0"><%=item.label%></h2>
+                                            <!--<p><%=item.desc%></p>-->
+                                            <span class="d-block h5 text-secondary mb-0"><%=item.price%></span>
+                                            <div class="buttons">
+                                                    <button id="submit" class="fg-btn" data-bind="click: selectItem.bind($data,$item,'text2') ">Submit</button>
+                                            </div>
+                                        </div>
+                                        </a>
+                                        
+                                    </div>        
+                                <% }) %>
+                            </div>
+                            
+                
+                    <!-- End Products Section -->
+                
+                        </div>
+                  </main>
+
+
+    </div>
+
+    <% } %>
+
+</script>
+
+
+<script type="text/javascript">
+                    
+    $(document).ready(function(){
+        
+        var slider = $('#home-banner .banner');
+			slider.unslider({autoplay: true, delay: 7000, nav: true, arrows: false});
+			$('button.slider-btn, button.feature-btn').click(function() {
+				var url = $(this).data('href');
+				if (url) {
+					location.href = url;
+				}
+				return false;
+            });
+        
+        if ('userSettings' in sessionStorage) {
+            var userPrefs = JSON.parse(sessionStorage.getItem('userSettings'));
+            $("#firstname").val(userPrefs.firstName);
+            $("#lastname").val(userPrefs.lastName);
+            $("#email").val(userPrefs.email);
+            $("#phone").val('+'+userPrefs.phoneNumber);
+        }
+        
+    });
+
+</script>
+
+<script src="<%=contextPath%>/js/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+<script src="<%=contextPath%>/js/landing/components/hs.unfold.js"></script>
+<script src="<%=contextPath%>/js/landing/components/hs.focus-state.js"></script>
+<script src="<%=contextPath%>/js/landing/components/hs.malihu-scrollbar.js"></script>
+<script src="<%=contextPath%>/js/landing/components/hs.cubeportfolio.js"></script>
+<script src="<%=contextPath%>/js/landing/components/hs.go-to.js"></script>
+<script src="<%=contextPath%>/js/vendor/dzsparallaxer/dzsparallaxer.js"></script>

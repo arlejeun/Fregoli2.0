@@ -1,0 +1,126 @@
+<%
+	var languages = verticalConfig.languages || {}
+	var menuItems = verticalConfig.header && verticalConfig.header.menu_items || []
+	var purchaseFields = verticalConfig.purchase && verticalConfig.purchase.form && verticalConfig.purchase.form.items || []
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title><%=appTitle%> - Home</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name = "format-detection" content = "telephone=no" />
+	<link rel="icon" href="<%=verticalPath%>/images/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="<%=verticalPath%>/images/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="<%=contextPath%>/css/normalize.min.css">
+	<!--link rel="stylesheet" href="<%=contextPath%>/css/style.css"-->
+	<link rel="stylesheet" href="<%=contextPath%>/css/skeleton.css">
+	<link rel="stylesheet" href="<%=contextPath%>/css/main.css">
+	<link rel="stylesheet" href="<%=contextPath%>/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<%=contextPath%>/css/at_media.css">
+	<!--link rel="stylesheet" type="text/css" href="<%=contextPath%>/css/chat-video.css"-->
+	<link rel="stylesheet" href="<%=verticalPath%>/styles.css">
+	<script src="<%=contextPath%>/js/jquery-2.2.4.min.js"></script>
+	<script src="<%=contextPath%>/js/jquery-migrate-1.4.1.min.js"></script>
+	<!--script src="<%=contextPath%>/js/jquery.validate.min.js"></script-->
+	<script src="<%=contextPath%>/js/jquery.easing.1.3.js"></script>
+	<script>
+		jQuery.siteData = <%- JSON.stringify(siteData) %>;
+		jQuery.siteData.languages = <%- JSON.stringify(languages) %>;
+		jQuery.siteData.channels = <%- JSON.stringify(channels) %>;
+		jQuery.siteData.menuItems = <%- JSON.stringify(menuItems) %>;
+		jQuery.siteData.purchaseFields = <%- JSON.stringify(purchaseFields) %>;
+	</script>
+	<script src="<%=contextPath%>/js/scroll_to_top.js"></script>
+	<script src="<%=contextPath%>/js/script.js"></script>
+	<script src="<%=contextPath%>/js/jquery.equalheights.js"></script>
+	<script src="<%=contextPath%>/js/jquery.mobilemenu.js"></script>
+	<script src="<%=contextPath%>/js/touchTouch.jquery.js"></script>
+	<script src="<%=contextPath%>/js/search.js"></script>
+	<link rel="stylesheet" href="<%=contextPath%>/css/jquery-ui.min.css">
+	<script src="<%=contextPath%>/js/jquery-ui.min.js"></script>
+	<!--script src="<%=contextPath%>/js/know-center.js"></script-->
+    <!--script src="<%=contextPath%>/js/cookie.js"></script-->
+    <script src="<%=contextPath%>/js/showdown.min.js"></script>
+    <script type="text/javascript" src="<%=contextPath%>/js/knockout-3.4.2.js"></script>
+    <script type="text/javascript" src="<%=contextPath%>/js/knockout.mapping.js"></script>
+    <script type="text/javascript" src="<%=contextPath%>/js/knockout.validation.min.js"></script>
+    <script type="text/javascript" src="<%=contextPath%>/js/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="<%=contextPath%>/js/jquery.blockUI.custom.js"></script>
+    <link rel="stylesheet" href="<%=contextPath%>/css/unslider.css">
+    <link rel="stylesheet" href="<%=contextPath%>/css/unslider-dots.css">
+    <script type="text/javascript" src="<%=contextPath%>/js/unslider-min.js"></script>
+   
+  <!-- Genesys scripts -->
+  <link rel="stylesheet" href="//demo.genesyslab.com/gdemo_mobile/web/v2/cxw/widgets.min.css" />    
+  <link rel="stylesheet" href="//demo.genesyslab.com/gdemo_mobile/web/v2/cxw/cxw.css" />
+  <script src="//demo.genesyslab.com/gdemo_mobile/web/v2/cxw/cxw_i18n.js" type="text/javascript"></script>
+  <script src="<%=contextPath%>/js/i18n.js" type="text/javascript"></script>
+  <script src="<%=contextPath%>/js/cxw.js" type="text/javascript"></script>
+  <script src="<%=contextPath%>/js/g-analytics.js" type="text/javascript"></script>
+  <script src="<%=contextPath%>/js/process.js" type="text/javascript"></script>
+  <!--------------------->
+    
+	<!--[if lt IE 8]>
+	<div style=' clear: both; text-align:center; position: relative;'>
+		<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+			<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+		</a>
+	</div>
+	<![endif]-->
+	<!--[if lt IE 9]>
+	<script src="<%=contextPath%>/js/html5shiv.js"></script>
+		<link rel="stylesheet" type="text/css" media="screen" href="<%=contextPath%>/css/ie.css">
+	<![endif]-->
+
+	<%-scripts%>
+	<%-stylesheets%>	
+</head>
+<body>
+    <script>
+        // AltoCloud code
+        try {
+            // clear ac cookies
+            document.cookie = '_acsbc=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=genesys.com';
+            document.cookie = '_acspc=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=genesys.com';
+            document.cookie = '_actms=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=genesys.com';
+            document.cookie = '_actmu=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=genesys.com';
+            document.cookie = '_actvc=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=genesys.com';
+            document.cookie = '_actmh=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=genesys.com';
+            document.cookie = '_actmi=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=genesys.com';
+            // call ac code
+            (function(a,t,c,l,o,u,d){a['altocloud-sdk.js']=o;a[o]=a[o]||function(){
+            (a[o].q=a[o].q||[]).push(arguments)},a[o].l=1*new Date();u=t.createElement(c),
+            d=t.getElementsByTagName(c)[0];u.async=1;u.src=l;d.parentNode.insertBefore(u,d)
+            })(window, document, 'script', 'https://altocloudcdn.com/sdk/js/web/v1/ac.js', 'ac');
+            // POD ac('init', 'cjhgbqpoo2e6m0fn2oi74b4z6', {datacenter: 'us1'});
+            ac('init', 'cjein883j18ae0gpw26keifpy', {datacenter: 'us1'});  // gbank
+            ac('debug');
+            ac('pageview');
+        }
+        catch(e){
+            console.log('AltoCloud script failed!');
+        }  
+        var _ac = function(p1, p2, p3, p4){
+            if (typeof ac != 'undefined' && ac) {
+                ac(p1, p2, p3, p4);
+            }    
+        }
+    </script>
+    <%- body %>
+	<script src="<%=contextPath%>/js/common.js"></script>
+	<script src="<%=contextPath%>/js/fregoli.js"></script>
+	<script src="<%=verticalPath%>/script.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', $.siteData.settings.ga_id, 'auto');
+      _gAnalytics.page();
+
+    </script>
+
+</body>
+</html>

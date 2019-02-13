@@ -1,0 +1,22 @@
+/*
+These additions have been added to tweak the overall 'overlay' styling so that it doesn't 
+display the titlebar and doesn't add too much padding for VIVR.
+*/
+
+.cx-overlay .cx-titlebar.cx-speechstorm {
+	display:none !important	;
+}
+
+.cx-overlay  .cx-body.cx-speechstorm {
+	padding: 0px !important;
+	overflow:hidden !important;
+}
+
+.cx-footer.cx-speechstorm {
+	padding-top: 0px;
+}
+
+.cx-common-container.cx-overlay.cx-speechstorm  {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}

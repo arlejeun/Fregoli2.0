@@ -1,0 +1,1 @@
+If you decide you are ready to install a GSol solar roof with our experts, your installation will be certified GSol-2020

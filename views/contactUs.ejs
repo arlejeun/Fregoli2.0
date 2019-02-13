@@ -1,0 +1,49 @@
+<%
+	var contactUs = verticalConfig.contact_us || {};
+	var channels = contactUs.channels || [];
+	var international = contactUs.international || {};
+	var countries = international.countries || [];
+%>
+<script id="contactUsTemplate" type="text/html">
+<div class="page-width">
+	<div class="container">
+		<h2><%=contactUs.title || 'Contact Us'%></h2>
+        <b><a href="tel:<%=contactUs.phone%>"><%=contactUs.phone%></a></b>
+		<%-markdown(contactUs.text)%>
+		<br>
+		<table width="100%" border="0">
+			<% channels.forEach(c => { %>
+			<tr>
+				<td width="55" height="44" valign="middle">
+					<a href="<%=c.href%>" <%-c.target ? 'target="' + c.target + '"' : ''%>>
+						<img src="<%=contextPath%>/images/<%=c.icon%>" width="32" height="32">
+					</a>
+				</td>
+				<td width="170" height="44" valign="middle">
+					<a href="<%=c.href%>" <%-c.target ? 'target="' + c.target + '"' : ''%>><%=c.label%></a>
+				</td>
+				<td height="44" valign="middle"><%=c.comment%></td>
+			</tr>
+			<% }) %>
+			<tr>
+				<td colspan="3">&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="right" valign="middle">* opens in new tab or window</td>
+			</tr>
+		</table>
+		<hr>
+		<table width="600" border="0" class="items">
+			<tr>
+				<td width="190" scope="col" rowspan="<%=countries.length+1%>">Contact us by phone</td>
+				<th align="left" scope="col">Country</th>
+			</tr>
+			<% countries.forEach(c => { %>
+			<tr>
+				<td><img src="<%=contextPath%>/images/flags/<%=c.code%>.png" class="flag" /><%=c.name%>: <%=c.phone%></td>
+			</tr>
+			<% }) %>
+		</table>
+	</div>
+</div>
+</script>

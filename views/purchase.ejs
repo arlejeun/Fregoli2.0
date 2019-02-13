@@ -1,0 +1,58 @@
+<%
+	var purchase = verticalConfig.purchase || {}
+	var form = purchase.form || {}
+%>
+<script id="purchaseTemplate" type="text/html">
+<div class="page-width">
+	<div class="container">
+		<h2><%=purchase.title || 'Purchase'%></h2>
+		<h3><%=purchase.subtitle || 'Subtitle'%></h3>
+		<div class="col-2">
+			<%-markdown(purchase.text || 'Text with details....')%>
+		</div>
+		<div class="col-2">
+			<h3><%=form.title || 'Form title'%></h3>
+			<div class="form-wrapper">
+			<form id="purchase-form" class="fg-form" action="purchase" method="post">
+				<!-- ko foreach: fields -->
+				<div class="form-group">
+					<!-- ko if: label -->
+					<label data-bind="text: label, attr: { for: name }" />
+					<!-- /ko -->
+
+					<!-- ko if: element() === 'select' -->
+					<select data-bind="options: options, attr: { id: name, name: name }, value: value, optionsCaption : !placeholder() ? 'Please select ' + label() : placeholder()"></select>
+					<!-- /ko -->
+
+					<!--ko if: element() === 'input' && type() === 'checkbox' -->
+					<!-- ko foreach: options -->
+					<input type="checkbox" data-bind="checkedValue: $data, checked: $parent.value, attr: { id: $parent.name() + '_' + $index() }" />
+					<label class="inline" data-bind="text: $data, attr: { for: $parent.name() + '_' + $index() }"></label>
+					<!-- /ko -->
+					<!--/ko-->
+
+					<!--ko if: element() === 'input' && type() === 'radio' -->
+					<!-- ko foreach: options -->
+					<input type="radio" data-bind="checkedValue: $data, checked: $parent.value, attr: { id: $parent.name() + '_' + $index() }" />
+					<label class="inline" data-bind="text: $data, attr: { for: $parent.name() + '_' + $index() }"></label>
+					<!-- /ko -->
+					<!--/ko-->
+
+					<!-- ko if: element() === 'input' && type() === 'text' -->
+					<input type="text" data-bind="value: value, attr: { id: name, name: name, placeholder: placeholder, readonly: readonly }" />
+					<!-- /ko -->
+
+					<!--ko if: element() === 'textarea' -->
+					<textarea data-bind="value: value, attr: { id: name, placeholder: placeholder }"></textarea>
+					<!-- /ko -->
+				</div>
+				<!-- /ko -->
+				<div class="buttons">
+					<button id="submit" class="fg-btn" data-bind="click: submit"><%=purchase.button_label || 'Submit'%></button>
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>
+</script>

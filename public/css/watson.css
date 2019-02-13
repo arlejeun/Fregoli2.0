@@ -1,0 +1,2883 @@
+p {
+
+        margin-top: 8px;
+
+	margin-bottom: 0px;
+
+}
+
+
+
+strong {
+
+vertical-align: baseline;
+
+}
+
+#conf {	/* Roboto Light */
+
+font-size:32px;
+
+line-height:32px;
+
+color:#CC0000;
+
+font-family:"Roboto";
+
+font-weight:700;
+
+left:40px;
+
+top:40px;
+
+position: absolute;
+
+}
+
+h45 {	/* Roboto Light */
+
+font-size:45px;
+
+line-height:45px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:300;
+
+}
+
+h45a {	/* Roboto Light */
+
+font-size:45px;
+
+line-height:45px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:300;
+
+}
+
+h38 {	/* Roboto Light */
+
+font-size:32px;
+
+line-height:34px;
+
+color:#CC0000;
+
+font-family:"Roboto";
+
+font-weight:300;
+
+}
+
+h22 {	/* Roboto Light */
+
+font-size:22px;
+
+line-height:22px;
+
+color:#CC0000;
+
+font-family:"Roboto";
+
+font-weight:300;
+
+}
+
+h22h {	/* Roboto Light */
+
+font-size:22px;
+
+line-height:30px;
+
+color:#CC0000;
+
+font-family:"Roboto";
+
+font-weight:300;
+
+}
+
+h22b {	/* Roboto Light */
+
+font-size:14px;
+
+line-height:14px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:700;
+
+}
+
+h22b2 {	/* Roboto Light */
+
+font-size:22px;
+
+line-height:28px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:700;
+
+}
+
+h22b3 {	/* Roboto Light */
+
+font-size:22px;
+
+line-height:28px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:700;
+
+}
+
+h17 {	/* Roboto Light */
+
+font-size:17px;
+
+line-height:17px;
+
+color:#999999;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+}
+
+h14 {	/* Roboto Light */
+
+font-size:14px;
+
+line-height:14px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+padding-top:10px;
+
+}
+
+h14-2 {	/* Roboto Light */
+
+font-size:14px;
+
+line-height:14px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+padding-top:20px;
+
+margin-top:20px;
+
+}
+
+h14-3 {	/* Roboto Light */
+
+font-size:14px;
+
+line-height:14px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+padding-top:20px;
+
+margin-top:20px;
+
+}
+
+h14r {	/* Roboto Light */
+
+font-size:14px;
+
+line-height:14px;
+
+color:#CC0000;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+}
+
+h14rb {	/* Roboto Light */
+
+font-size:14px;
+
+line-height:16px;
+
+color:#CC0000;
+
+font-family:"Roboto";
+
+font-weight:700;
+
+}
+
+h14rb2 {	/* Roboto Light */
+
+font-size:14px;
+
+line-height:16px;
+
+color:#CC0000;
+
+font-family:"Roboto";
+
+font-weight:700;
+
+}
+
+h12 {	/* Roboto Regular */
+
+font-size:12px;
+
+line-height:14px;
+
+color:#666666;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+}
+
+h12l {	/* Roboto Regular */
+
+font-size:12px;
+
+line-height:14px;
+
+color:#666666;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+}
+
+h12d {	/* Roboto Regular */
+
+font-size:12px;
+
+line-height:14px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+}
+
+/* Popup CSS */
+
+#backgroundPopup{
+
+display:none;
+
+position:fixed;
+
+_position:absolute; /* hack for internet explorer 6*/
+
+height:100%;
+
+width:100%;
+
+top:0;
+
+left:0;
+
+background:#000000;
+
+z-index:99900;
+
+}
+
+#popupChatContact{
+
+display:none;
+
+position:fixed;
+
+_position:absolute; /* hack for internet explorer 6*/
+
+z-index:99999;
+
+}
+
+#popupContact{
+
+display:none;
+
+background:#FFFFFF;
+
+position:fixed;
+
+_position:absolute; /* hack for internet explorer 6*/
+
+z-index:99999;
+
+border:1px solid #666666;
+
+-moz-box-shadow: 0 0 20px 5px #999;
+
+-webkit-box-shadow: 0 0 20px 5px #999;
+
+}
+
+#helpArea{
+
+display:none;
+
+position:fixed;
+
+_position:absolute; /* hack for internet explorer 6*/
+
+z-index:99999;
+
+}
+
+#chatArea{
+
+display:none;
+
+position:fixed;
+
+_position:absolute; /* hack for internet explorer 6*/
+
+z-index:99999;
+
+}
+
+#answerArea{
+
+display:none;
+
+position:fixed;
+
+_position:absolute; /* hack for internet explorer 6*/
+
+z-index:99999;
+
+}
+
+#popupContactClose{
+
+line-height:64px;
+
+right:6px;
+
+top:4px;
+
+}
+
+#popupContactClose span{
+
+/*	display:block;	*/
+
+	width:64px;
+
+	height:64px;
+
+/*	background:url(popup_close.png) no-repeat;	*/
+
+	float:right;
+
+}
+
+
+
+/* ----- Common Fonts ----- */
+
+
+
+/* ----------- */
+
+#askhelp {
+
+padding-top:8px;
+
+padding-left:8px;
+
+height:50px;
+
+width:50px;
+
+float:left;
+
+}
+
+
+
+#askhelp img {
+
+max-width: 100%;
+
+max-height: 100%;
+
+vertical-align: middle;
+
+display:block;
+
+margin:auto;
+
+border: 0;
+
+}
+
+
+
+#askclose img {
+
+max-width: 100%;
+
+height: auto;
+
+vertical-align: middle;
+
+border: 0;
+
+}
+
+
+
+#askhelp h1 {	/* Roboto Light */
+
+font-size:42px;
+
+line-height:42px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:300;
+
+}
+
+
+
+#askclose {
+
+padding-right:5px;
+
+padding-top:3px;
+
+float:right;
+
+/* margin-top: -78px; */
+
+}
+
+
+
+#askget {
+
+padding-top:0px;
+
+padding-left:8px;
+
+margin-top:-4px;
+
+margin-bottom:8px;
+
+float:left;
+
+}
+
+
+
+#askget h2 {	/* Roboto Regular */
+
+font-size:14px;
+
+line-height:14px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:400 !important;
+
+margin: 10px 0px 11px 0px;
+
+text-transform:none;
+
+letter-spacing: 0px;
+
+}
+
+
+
+#askq {
+
+margin-left:8px;
+
+margin-top:-8px;
+
+height:28px;
+
+padding-top:0px;
+
+padding-left:8px;
+
+border-radius:4px;
+
+background: linear-gradient(#CC0000, #DD0404);
+
+text-align:center;
+
+width:140px;
+
+cursor:default;
+
+float:left;
+
+}
+
+
+
+#askq h3 {	/* Roboto Regular */
+
+font-size:14px;
+
+line-height:14px;
+
+color:#FFFFFF;
+
+font-family:"Roboto";
+
+font-weight:400 !important;
+
+text-transform:none;
+
+margin:auto;
+
+padding-top:7px;
+
+padding-right:10px;
+
+letter-spacing: 0px;
+
+}
+
+
+
+/* ------ Question ----- */
+
+#knowledgeQuestionArea{
+
+display:none;
+
+background:#FFFFFF;
+
+position:fixed;
+
+_position:absolute; /* hack for internet explorer 6*/
+
+z-index:99999;
+
+border:1px solid #666666;
+
+-moz-box-shadow: 0 0 20px 5px #999;
+
+-webkit-box-shadow: 0 0 20px 5px #999;
+
+}
+
+
+
+#knowledgeClose {
+
+padding-top:5px;
+
+padding-right:5px;
+
+float:right;
+
+vertical-align:middle;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeClose img {
+
+max-width: 100%;
+
+height: auto;
+
+vertical-align: middle;
+
+border: 0;
+
+}
+
+
+
+#knowledgeClose h14 {
+
+font-size:14px;
+
+line-height:22px;
+
+padding-top:8px;
+
+color:#666666;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+}
+
+
+
+#knowledgePrevious {
+
+padding-top:35px;
+
+padding-bottom:35px;
+
+text-align:center;  
+
+vertical-align:middle;
+
+background:#F1F1F1;
+
+border-bottom: 1px solid #DCDCDC;
+
+}
+
+
+
+#knowledgeTitle {
+
+padding-top:75px;
+
+padding-bottom:5px;
+
+text-align:center;  
+
+vertical-align:middle;
+
+}
+
+
+
+#knowledgeQuestion {
+
+padding-top:30px;
+
+padding-bottom:10px;
+
+text-align:center;  
+
+vertical-align:middle;
+
+}
+
+
+
+#knowledgeQuestion input {
+
+border: 1px solid #990000;
+
+background: #FFFFFF;
+
+width: 600px;
+
+font-size:17px;
+
+line-height:17px;
+
+color:#999999;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+text-align:center;
+
+}
+
+
+
+#knowledgeQuestion img {
+
+border: 1px solid #990000;
+
+background: #FFFFFF;
+
+width: 600px;
+
+font-size:17px;
+
+line-height:17px;
+
+color:#999999;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+text-align:center;
+
+float:left;
+
+height:200px;
+
+width:170px;
+
+margin-left:140px;
+
+}
+
+
+
+#knowledgeCenter {
+
+width:310px;
+
+margin-right:130px;
+
+margin-top:15px;
+
+float: right;
+
+}
+
+
+
+#knowledgeCenter2 {
+
+width:210px;
+
+margin-right:190px;
+
+margin-top:15px;
+
+float: none;
+
+}
+
+
+
+#knowledgeGet {
+
+height:28px;
+
+padding-top:0px;
+
+border-radius:4px;
+
+background: linear-gradient(#CC0000, #DD0404);
+
+text-align:center;
+
+width:140px;
+
+float:left;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeGet h2 {	/* Roboto Regular */
+
+font-size:14px;
+
+line-height:8px;
+
+color:#FFFFFF;
+
+font-family:"Roboto";
+
+font-weight:400 !important;
+
+text-transform:none;
+
+margin: 10px 0 0px 0;
+
+letter-spacing: 0px;
+
+}
+
+
+
+#knowledgeCancel {
+
+height:28px;
+
+padding-top:0px;
+
+border-radius:4px;
+
+background: linear-gradient(#DFDFDF, #CCCCCC);
+
+text-align:center;
+
+width: 140px;
+
+float: right;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeCancel h2 {	/* Roboto Regular */
+
+font-size:14px;
+
+line-height:8px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:400 !important;
+
+text-transform:none;
+
+margin: 10px 0 0px 0;
+
+letter-spacing: 0px;
+
+}
+
+
+
+#knowledgePowered {
+
+padding-top:190px;
+
+text-align:center;
+
+}
+
+
+
+#knowledgeLogo {
+
+padding-top:15px;
+
+padding-left:40px;
+
+text-align:left;
+
+width:200px;
+
+heigth:100px;
+
+display:block;
+
+}
+
+
+
+#knowledgeLogo img {
+
+max-width: 100%;
+
+height: auto;
+
+vertical-align: middle;
+
+border: 0;
+
+}
+
+
+
+#knowledgeGenesysLogo {
+
+margin-top:-65px;
+
+padding-right:20px;
+
+text-align:right;
+
+width:200px;
+
+heigth:150px;
+
+display:block;
+
+float: right;
+
+}
+
+
+
+#knowledgeGenesysLogo img {
+
+max-width: 100%;
+
+height: auto;
+
+vertical-align: middle;
+
+border: 0;
+
+}
+
+
+
+/* ------ Wait ----- */
+
+
+
+#knowledgeWaitArea{
+
+display:none;
+
+background:#FFFFFF;
+
+position:fixed;
+
+_position:absolute; /* hack for internet explorer 6*/
+
+z-index:99999;
+
+border:1px solid #666666;
+
+-moz-box-shadow: 0 0 20px 5px #999;
+
+-webkit-box-shadow: 0 0 20px 5px #999;
+
+}
+
+
+
+
+
+#knowledgeWaitArea img {
+
+max-width: 100%;
+
+height: auto;
+
+vertical-align: middle;
+
+border: 0;
+
+}
+
+
+
+#knowledgeWaitTitle {
+
+padding-top:75px;
+
+padding-bottom:25px;
+
+text-align:center;  
+
+vertical-align:middle;
+
+}
+
+
+
+#knowledgeBlock {
+
+float:left;
+
+height:50px;
+
+width:1px;
+
+}
+
+
+
+#knowledgeGIF {
+
+padding-top:5px;
+
+text-align:center;
+
+width:125px;
+
+height:125px;
+
+display:block;
+
+margin:auto;
+
+padding-top:50px;
+
+}
+
+
+
+#knowledgeWaitPowered {
+
+padding-top:60px;
+
+text-align:center;
+
+}
+
+#knowledgeAgentPowered {
+
+padding-top:50px;
+
+text-align:center;
+
+}
+
+
+
+#knowledgeWaitLogo {
+
+padding-top:18px;
+
+padding-left:40px;
+
+text-align:left;
+
+width:200px;
+
+heigth:100px;
+
+display:block;
+
+}
+
+
+
+#knowledgeWaitLogo img {
+
+max-width: 100%;
+
+height: auto;
+
+vertical-align: middle;
+
+border: 0;
+
+}
+
+
+
+#knowledgeWaitClose {
+
+padding-top:5px;
+
+padding-right:5px;
+
+float:right;
+
+vertical-align:middle;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeWaitClose h14 {
+
+font-size:14px;
+
+line-height:22px;
+
+padding-top:8px;
+
+color:#666666;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+}
+
+
+
+
+
+
+
+/* ------ Answer ----- */
+
+
+
+#knowledgeAnswerArea{
+
+display:none;
+
+background:#FFFFFF;
+
+position:fixed;
+
+_position:absolute; /* hack for internet explorer 6*/
+
+z-index:99999;
+
+border:1px solid #666666;
+
+-moz-box-shadow: 0 0 20px 5px #999;
+
+-webkit-box-shadow: 0 0 20px 5px #999;
+
+}
+
+
+
+
+
+#knowledgeAnswerArea img {
+
+max-width: 100%;
+
+height: auto;
+
+vertical-align: middle;
+
+border: 0;
+
+}
+
+
+
+#knowledgeYourQuestion {
+
+padding-top:25px;
+
+padding-left: 30px;
+
+text-align:left;  
+
+vertical-align:middle;
+
+background:#F1F1F1;
+
+}
+
+
+
+#knowledgePreviousQuestion {
+
+padding-top:5px;
+
+padding-bottom:25px;
+
+padding-left: 30px;
+
+text-align:left;  
+
+vertical-align:middle;
+
+}
+
+
+
+
+
+#knowledgeOurAnswer {
+
+text-align:left;  
+
+vertical-align:middle;
+
+}
+
+
+
+#knowledgeTheAnswer {
+
+padding-top: 10px;
+
+text-align:left;  
+
+vertical-align:middle;
+
+height:110px;
+
+overflow: hidden;
+
+}
+
+
+
+#knowledgeAnswerWhere {
+
+padding-top: 10px;
+
+text-align:left; 
+
+width:130px; 
+
+vertical-align:middle;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeAnswerMore {
+
+padding-top: 10px;
+
+text-align:left;  
+
+vertical-align:middle;
+
+}
+
+
+
+#knowledgeAnswerMoreTag {
+
+padding-top: 10px;
+
+text-align:left;  
+
+vertical-align:middle;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeAnswerMoreLink {
+
+text-align:left;  
+
+vertical-align:middle;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeAnswerUpsellLink {
+
+cursor:default;
+
+}
+
+
+
+
+
+#knowledgeAnswerTop {
+
+text-align:center;  
+
+vertical-align:middle;
+
+position: relative;
+
+height: 23%;
+
+background:#F1F1F1;
+
+border-bottom: 1px solid #DCDCDC;
+
+}
+
+
+
+#knowledgeAnswerBottom {
+
+text-align:center;  
+
+vertical-align:middle;
+
+position: relative;
+
+height: 77%;
+
+margin-left:30px;
+
+}
+
+
+
+#knowledgeAnswerLeft {
+
+margin-top:20px;
+
+margin-bottom:20px;
+
+text-align:center;  
+
+vertical-align:middle;
+
+width: 480px;
+
+height: 345px;
+
+border-right: 1px solid #DCDCDC;
+
+float: left;
+
+position: relative;
+
+}
+
+
+
+#knowledgeAnswerRight {
+
+margin-top:20px;
+
+margin-bottom:20px;
+
+text-align:center;  
+
+vertical-align:middle;
+
+position: relative;
+
+width: 210px;
+
+height: 345px;
+
+float: right;
+
+}
+
+
+
+#knowledgeAnswerRelated {
+
+text-align:left;  
+
+vertical-align:middle;
+
+}
+
+
+
+#knowledgeLeftTop {
+
+margin-right:20px;
+
+text-align:center;  
+
+vertical-align:middle;
+
+position: relative;
+
+height: 230px;
+
+border-bottom: 1px solid #DCDCDC;
+
+}
+
+
+
+#knowledgeLeftBottom {
+
+margin-right:20px;
+
+margin-top:10px;
+
+margin-bottom:20px;
+
+text-align:center;  
+
+vertical-align:middle;
+
+position: relative;
+
+overflow: hidden;
+
+height: 40%;
+
+}
+
+
+
+
+
+#knowledgeRightTop {
+
+text-align:center;  
+
+vertical-align:middle;
+
+position: relative;
+
+height: 230px;
+
+border-bottom: 1px solid #DCDCDC;
+
+overflow: hidden;
+
+margin-right:20px;
+
+}
+
+
+
+#knowledgeAnswerTitle {
+
+padding-top:75px;
+
+padding-bottom:25px;
+
+text-align:center;  
+
+vertical-align:middle;
+
+}
+
+
+
+#knowledgeAnswerClose {
+
+padding-top:5px;
+
+padding-right:5px;
+
+float:right;
+
+vertical-align:middle;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeAnswerClose h14 {
+
+font-size:14px;
+
+line-height:22px;
+
+padding-top:8px;
+
+color:#666666;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+}
+
+
+
+
+
+#knowledgeAnswerCenter {
+
+width:310px;
+
+margin: 0 auto;
+
+
+
+}
+
+
+
+#knowledgeAnswerAgent {
+
+padding-top: 64px;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeAnswerGet {
+
+height:28px;
+
+margin-top:20px;
+
+padding-top:0px;
+
+border-radius:4px;
+
+background: linear-gradient(#CC0000, #DD0404);
+
+text-align:center;
+
+width:140px;
+
+float:left;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeAnswerGet h2 {	/* Roboto Regular */
+
+font-size:14px;
+
+line-height:8px;
+
+color:#FFFFFF;
+
+font-family:"Roboto";
+
+font-weight:400 !important;
+
+text-transform:none;
+
+margin: 10px 0 0px 0;
+
+letter-spacing: 0px;
+
+}
+
+
+
+#knowledgeAnswerCancel {
+
+height:28px;
+
+margin-top:20px;
+
+padding-top:0px;
+
+border-radius:4px;
+
+background: linear-gradient(#DFDFDF, #CCCCCC);
+
+text-align:center;
+
+width: 140px;
+
+float: right;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeAnswerCancel h2 {	/* Roboto Regular */
+
+font-size:14px;
+
+line-height:8px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:400 !important;
+
+text-transform:none;
+
+margin: 10px 0 0px 0;
+
+letter-spacing: 0px;
+
+}
+
+
+
+#knowledgeWhereLogo {
+
+padding-top:5px;
+
+text-align:left;
+
+width:150px;
+
+display:block;
+
+}
+
+
+
+#knowledgeAnswerClose {
+
+padding-top:5px;
+
+padding-right:5px;
+
+float:right;
+
+vertical-align:middle;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeAnswerUpsell {
+
+height:180px;
+
+width:180px;
+
+margin: 0 auto;
+
+}
+
+
+
+
+
+/* ------ Watson ----- */
+
+
+
+#knowledgeWatsonArea{
+
+display:none;
+
+background:#FFFFFF;
+
+position:fixed;
+
+_position:absolute; /* hack for internet explorer 6*/
+
+z-index:99999;
+
+border:1px solid #666666;
+
+-moz-box-shadow: 0 0 20px 5px #999;
+
+-webkit-box-shadow: 0 0 20px 5px #999;
+
+}
+
+
+
+#knowledgeWatsonArea img {
+
+max-width: 100%;
+
+height: auto;
+
+vertical-align: middle;
+
+border: 0;
+
+}
+
+
+
+#knowledgeWatsonTop {
+
+text-align:center;  
+
+vertical-align:middle;
+
+position: relative;
+
+height: 23%;
+
+background:#F1F1F1;
+
+border-bottom: 1px solid #DCDCDC;
+
+}
+
+
+
+#knowledgeWatsonAbout {
+
+padding-top:50px;
+
+padding-bottom:25px;
+
+text-align:middle;  
+
+vertical-align:middle;
+
+}
+
+
+
+#knowledgeWatsonMiddle {
+
+text-align:center;  
+
+vertical-align:middle;
+
+position: relative;
+
+height: 220px;
+
+background:#FFFFFF;
+
+border-bottom: 1px solid #DCDCDC;
+
+margin-top:20px;
+
+margin-bottom:20px;
+
+margin-left:60px;
+
+margin-right:60px;
+
+}
+
+
+
+
+
+#knowledgeWatsonMiddleLeft {
+
+text-align:center;  
+
+vertical-align:middle;
+
+width: 134px;
+
+height: 134px;
+
+float: left;
+
+position: relative;
+
+}
+
+
+
+#knowledgeWatsonMiddleRight {
+
+text-align:left;  
+
+vertical-align:middle;
+
+width: 450px;
+
+height: 200px;
+
+float: right;
+
+position: relative;
+
+}
+
+
+
+#knowledgeWatsonBack {
+
+height:28px;
+
+margin-top:10px;
+
+margin-bottom:20px;
+
+padding-top:0px;
+
+border-radius:4px;
+
+background: linear-gradient(#CC0000, #DD0404);
+
+text-align:center;
+
+width:140px;
+
+float:left;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeWatsonBack h2 {	/* Roboto Regular */
+
+font-size:14px;
+
+line-height:8px;
+
+color:#FFFFFF;
+
+font-family:"Roboto";
+
+font-weight:400 !important;
+
+text-transform:none;
+
+margin: 10px 0 0px 0;
+
+letter-spacing: 0px;
+
+}
+
+
+
+#knowledgeWatsonBottom {
+
+text-align:left;  
+
+vertical-align:middle;
+
+position: relative;
+
+height: 220px;
+
+margin-top:20px;
+
+}
+
+
+
+#knowledgeWatsonBottomLeft {
+
+text-align:left;  
+
+vertical-align:middle;
+
+position: relative;
+
+float:left;
+
+height: 100px;
+
+width:440px;
+
+background:#FFFFFF;
+
+margin-left:60px;
+
+margin-bottom:20px;
+
+border-right: 1px solid #DCDCDC;
+
+}
+
+
+
+#knowledgeWatsonBottomRight {
+
+text-align:left;  
+
+vertical-align:middle;
+
+position: relative;
+
+height: 100px;
+
+width:160px;
+
+float:right;
+
+background:#FFFFFF;
+
+margin-right:60px;
+
+margin-bottom:20px;
+
+}
+
+
+
+
+
+#knowledgeWatsonYes {
+
+margin-top:6px;
+
+height:24px;
+
+border-radius:4px;
+
+background: linear-gradient(#DFDFDF, #CCCCCC);
+
+text-align:center;
+
+width:50px;
+
+cursor:default;
+
+float:left;
+
+}
+
+
+
+#knowledgeWatsonYes h2 {	/* Roboto Regular */
+
+font-size:12px;
+
+line-height:6px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:700 !important;
+
+text-transform:none;
+
+margin: 8px 0 0px 0;
+
+letter-spacing: 0px;
+
+}
+
+
+
+#knowledgeWatsonNo {
+
+margin-left:8px;
+
+margin-top:6px;
+
+height:24px;
+
+border-radius:4px;
+
+background: linear-gradient(#DFDFDF, #CCCCCC);
+
+text-align:center;
+
+width:50px;
+
+cursor:default;
+
+float:left;
+
+}
+
+
+
+#knowledgeWatsonNo h2 {	/* Roboto Regular */
+
+font-size:12px;
+
+line-height:6px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:700 !important;
+
+text-transform:none;
+
+letter-spacing: 0px;
+
+margin: 8px 0 0px 0;
+
+}
+
+
+
+#knowledgeWatsonA1 {
+
+margin-left:20px;
+
+}
+
+#knowledgeWatsonA2 {
+
+margin-left:20px;
+
+}
+
+#knowledgeWatsonA3 {
+
+margin-left:20px;
+
+}
+
+
+
+
+
+#knowledgeWatsonClose {
+
+padding-top:5px;
+
+padding-right:5px;
+
+float:right;
+
+vertical-align:middle;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeWatsonClose h14 {
+
+font-size:14px;
+
+line-height:22px;
+
+padding-top:8px;
+
+color:#666666;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+}
+
+
+
+
+
+/* ------ Evidence ----- */
+
+
+
+#knowledgeEvidenceArea{
+
+display:none;
+
+background:#FFFFFF;
+
+position:fixed;
+
+_position:absolute; /* hack for internet explorer 6*/
+
+z-index:99999;
+
+border:1px solid #666666;
+
+-moz-box-shadow: 0 0 20px 5px #999;
+
+-webkit-box-shadow: 0 0 20px 5px #999;
+
+}
+
+
+
+#knowledgeEvidenceArea img {
+
+max-width: 100%;
+
+height: auto;
+
+vertical-align: middle;
+
+border: 0;
+
+}
+
+
+
+#knowledgeEvidenceMiddle {
+
+vertical-align:middle;
+
+position: relative;
+
+height: 220px;
+
+background:#FFFFFF;
+
+border-bottom: 1px solid #DCDCDC;
+
+margin-top:20px;
+
+margin-bottom:20px;
+
+margin-left:60px;
+
+margin-right:60px;
+
+text-align:center;
+
+}
+
+
+
+#knowledgeEvidence {
+
+vertical-align:middle;
+
+position: relative;
+
+height: 160px;
+
+background:#FFFFFF;
+
+text-align:left;
+
+overflow: hidden;
+
+}
+
+
+
+
+
+#knowledgeEvidenceBack {
+
+height:28px;
+
+padding-top:0px;
+
+border-radius:4px;
+
+background: linear-gradient(#CC0000, #DD0404);
+
+text-align:center;
+
+width:140px;
+
+cursor:default;
+
+margin: 0 auto; 
+
+}
+
+
+
+#knowledgeEvidenceBack h2 {	/* Roboto Regular */
+
+font-size:14px;
+
+line-height:24px;
+
+color:#FFFFFF;
+
+font-family:"Roboto";
+
+font-weight:400 !important;
+
+text-transform:none;
+
+letter-spacing: 0px;
+
+margin: 10px 0 0px 0;
+
+}
+
+
+
+
+
+#knowledgeEvidenceClose {
+
+padding-top:5px;
+
+padding-right:5px;
+
+float:right;
+
+vertical-align:middle;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeEvidenceClose h14 {
+
+font-size:14px;
+
+line-height:22px;
+
+padding-top:8px;
+
+color:#666666;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+}
+
+
+
+
+
+/* ------ Agent ----- */
+
+
+
+#knowledgeAgentArea{
+
+display:none;
+
+background:#FFFFFF;
+
+position:fixed;
+
+_position:absolute; /* hack for internet explorer 6*/
+
+z-index:99999;
+
+border:1px solid #666666;
+
+-moz-box-shadow: 0 0 20px 5px #999;
+
+-webkit-box-shadow: 0 0 20px 5px #999;
+
+}
+
+
+
+#knowledgeAgentArea img {
+
+max-width: 100%;
+
+height: auto;
+
+vertical-align: middle;
+
+border: 0;
+
+}
+
+
+
+#knowledgeAgentClose {
+
+padding-top:5px;
+
+padding-right:5px;
+
+float:right;
+
+vertical-align:middle;
+
+cursor:default;
+
+}
+
+
+
+#knowledgeAgentClose h14 {
+
+font-size:14px;
+
+line-height:22px;
+
+padding-top:8px;
+
+color:#666666;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+}
+
+
+
+#knowledgeAgentMiddle {
+
+vertical-align:middle;
+
+position: relative;
+
+height: 100px;
+
+background:#FFFFFF;
+
+margin-top:30px;
+
+margin-bottom:10px;
+
+margin-left:60px;
+
+margin-right:60px;
+
+text-align:center;
+
+}
+
+
+
+
+
+#knowledgeAgentReady {
+
+vertical-align:middle;
+
+position: relative;
+
+height: 100px;
+
+background:#FFFFFF;
+
+text-align:center;
+
+overflow: hidden;
+
+}
+
+
+
+#knowledgeAgentNumber {
+
+text-align:center;
+
+height: 20px;
+
+}
+
+
+
+#knowledgeAgentOuter {
+
+height:90px;
+
+margin: 0 auto; 
+
+}
+
+
+
+#knowledgeAgentCenter {
+
+width:310px;
+
+height:90px;
+
+margin: 0 auto; 
+
+}
+
+
+
+#knowledgeAnswerAgent {
+
+text-align: center;
+
+padding-top: 50px;
+
+}
+
+
+
+
+
+#knowledgeWatsonAgentBottom {
+
+text-align:left;  
+
+vertical-align:middle;
+
+position: relative;
+
+height: 0px;
+
+margin-top:0px;
+
+}
+
+
+
+
+
+#knowledgeAgentGet {
+
+height:30px;
+
+margin-top:4px;
+
+padding-top:0px;
+
+border-radius:4px;
+
+background: linear-gradient(#CC0000, #DD0404);
+
+text-align:center;
+
+width:140px;
+
+cursor:default;
+
+float: left;
+
+}
+
+
+
+#knowledgeAgentGet h2 {	/* Roboto Regular */
+
+font-size:14px;
+
+line-height:8px;
+
+color:#FFFFFF;
+
+font-family:"Roboto";
+
+font-weight:400 !important;
+
+text-transform:none;
+
+letter-spacing: 0px;
+
+margin: 10px 0 0px 0;
+
+}
+
+
+
+#knowledgeAgentCancel {
+
+height:30px;
+
+margin-top:4px;
+
+padding-top:0px;
+
+border-radius:4px;
+
+background: linear-gradient(#DFDFDF, #CCCCCC);
+
+text-align:center;
+
+width: 140px;
+
+cursor:default;
+
+float:right;
+
+}
+
+
+
+#knowledgeAgentCancel h2 {	/* Roboto Regular */
+
+font-size:14px;
+
+line-height:8px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:400 !important;
+
+text-transform:none;
+
+letter-spacing: 0px;
+
+margin: 10px 0 0px 0;
+
+}
+
+
+
+#knowledgeAgentLogo {
+
+padding-top:2px;
+
+padding-left:40px;
+
+text-align:left;
+
+width:200px;
+
+heigth:100px;
+
+display:block;
+
+}
+
+
+
+#knowledgeAgentLogo img {
+
+max-width: 100%;
+
+height: auto;
+
+vertical-align: middle;
+
+border: 0;
+
+}
+
+
+
+
+
+/* ------ Error ----- */
+
+
+
+#knowledgeErrorArea{
+
+display:none;
+
+background:#FFFFFF;
+
+position:fixed;
+
+_position:absolute; /* hack for internet explorer 6*/
+
+z-index:99999;
+
+border:1px solid #666666;
+
+-moz-box-shadow: 0 0 20px 5px #999;
+
+-webkit-box-shadow: 0 0 20px 5px #999;
+
+}
+
+
+
+#knowledgeErrorArea img {
+
+max-width: 100%;
+
+height: auto;
+
+vertical-align: middle;
+
+border: 0;
+
+}
+
+
+
+#knowledgeErrorGet {
+
+height:30px;
+
+margin-top:4px;
+
+padding-top:0px;
+
+border-radius:4px;
+
+background: linear-gradient(#CC0000, #DD0404);
+
+text-align:center;
+
+width:140px;
+
+cursor:default;
+
+float: left;
+
+}
+
+
+
+#knowledgeErrorGet h2 {	/* Roboto Regular */
+
+font-size:14px;
+
+line-height:8px;
+
+color:#FFFFFF;
+
+font-family:"Roboto";
+
+font-weight:400 !important;
+
+text-transform:none;
+
+letter-spacing: 0px;
+
+margin: 10px 0 0px 0;
+
+}
+
+
+
+#knowledgeErrorCancel {
+
+height:30px;
+
+margin-top:4px;
+
+padding-top:0px;
+
+border-radius:4px;
+
+background: linear-gradient(#DFDFDF, #CCCCCC);
+
+text-align:center;
+
+width: 140px;
+
+cursor:default;
+
+float:right;
+
+}
+
+
+
+#knowledgeErrorCancel h2 {	/* Roboto Regular */
+
+font-size:14px;
+
+line-height:8px;
+
+color:#333333;
+
+font-family:"Roboto";
+
+font-weight:400 !important;
+
+text-transform:none;
+
+letter-spacing: 0px;
+
+margin: 10px 0 0px 0;
+
+}
+
+
+
+
+
+#knowledgeErrorAgent {
+
+text-align: center;
+
+padding-top: 50px;
+
+cursor:default;
+
+}
+
+
+
+
+
+#knowledgeErrorMiddle {
+
+vertical-align:middle;
+
+position: relative;
+
+height: 100px;
+
+background:#FFFFFF;
+
+margin-top:30px;
+
+margin-bottom:10px;
+
+margin-left:40px;
+
+margin-right:40px;
+
+text-align:center;
+
+}
+
+
+
+#knowledgeErrorQuestion {
+
+padding-top:0px;
+
+padding-bottom:0px;
+
+text-align:center;  
+
+vertical-align:middle;
+
+margin-top:10px;
+
+}
+
+
+
+#knowledgeErrorReady {
+
+vertical-align:middle;
+
+position: relative;
+
+height: 50px;
+
+background:#FFFFFF;
+
+text-align:center;
+
+overflow: hidden;
+
+}
+
+
+
+
+
+#knowledgeErrorQuestion input {
+
+border: 1px solid #990000;
+
+background: #FFFFFF;
+
+width: 600px;
+
+font-size:17px;
+
+line-height:17px;
+
+color:#999999;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+text-align:center;
+
+}
+
+
+
+
+
+#knowledgeErrorClose {
+
+padding-top:5px;
+
+padding-right:5px;
+
+float:right;
+
+vertical-align:middle;
+
+cursor:default;
+
+}
+
+
+
+
+
+/* ------ Chat ----- */
+
+
+
+#knowledgeChatArea{
+
+display:none;
+
+background:#FFFFFF;
+
+position:fixed;
+
+_position:absolute; /* hack for internet explorer 6*/
+
+z-index:99999;
+
+border:1px solid #666666;
+
+-moz-box-shadow: 0 0 20px 5px #999;
+
+-webkit-box-shadow: 0 0 20px 5px #999;
+
+}
+
+
+
+
+
+#knowledgeChatClose {
+
+padding-top:5px;
+
+padding-right:5px;
+
+float:right;
+
+vertical-align:middle;
+
+cursor:default;
+
+height:30px;
+
+}
+
+
+
+#knowledgeChatClose h14 {
+
+font-size:14px;
+
+line-height:22px;
+
+padding-top:8px;
+
+color:#666666;
+
+font-family:"Roboto";
+
+font-weight:400;
+
+}
+
+
+
+
+
+/* ------ Link ----- */
+
+
+
+#knowledgeLinkArea{
+
+display:none;
+
+background:#FFFFFF;
+
+position:fixed;
+
+_position:absolute; /* hack for internet explorer 6*/
+
+z-index:99999;
+
+border:1px solid #666666;
+
+-moz-box-shadow: 0 0 20px 5px #999;
+
+-webkit-box-shadow: 0 0 20px 5px #999;
+
+}
+
+#knowledgeWatsonErrorBottom {
+text-align:left;  
+vertical-align:middle;
+position: relative;
+height: 0px;
+margin-top:40px;
+}

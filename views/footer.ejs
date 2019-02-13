@@ -1,0 +1,26 @@
+<%
+	var footer = verticalConfig.footer || {};
+	var linkGroups = footer.link_groups || [];
+%>
+
+<button type="button" id="chat-button" style="display:none">Start Chat</button>
+
+<div class="footer-container">
+	<div class="page-width">
+		<div class="footer-links">
+			<% linkGroups.forEach(group => { %>
+			<div class="list">
+				<p class="label"><%=group.label%></p>
+				<ul>
+					<% group.links.forEach(link => { %>
+					<li><a href="<%=link.href%>"><%=link.label%></a></li>
+					<% }) %>
+				</ul>
+			</div>
+			<% }) %>
+			<div class="footer-CR">
+				<%= footer.copyright %> | <a href="#privacy">Privacy Policy</a>
+			</div>
+		</div>
+	</div>
+</div>

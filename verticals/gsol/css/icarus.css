@@ -1,0 +1,7 @@
+/* Kate chat icon (Fregoli) */
+.cx-avatar.agent svg{
+    display:none!important;
+}
+.cx-avatar.agent{
+    background-image: url("../images/kate.png");
+}             	

@@ -1,0 +1,736 @@
+{
+
+	"en": {
+
+		"custom": {
+
+			"String01": "String-1",
+			"String02": "String-2",
+			"String03": "String-3",
+			"String04": "String-4",
+			"Disclaimer": "We use cookies, ok? It's 2017; is everyone cool with 'cookies' yet?",
+			"Terms": "This is a checkbox that indicates you agree to our 2,000 page terms"
+		},
+
+		"webchat": {
+
+			"ChatButton": "Chat",
+			"ChatStarted": "Chat Started!!!",
+			"ChatEnded": "Chat Ended!!!",
+			"ChatFailed": "There was a problem starting the chat session. Please Retry.",
+			"ChatFailedRetry": "Retry",
+			"ChatFailedClose": "Close",
+			"AgentNameDefault": "Agent",
+			"AgentConnected": "<%Agent%> Connected",
+			"AgentDisconnected": "<%Agent%> Disconnected",
+			"AgentTyping": "...",
+			"AgentUnavailable": "Sorry. There are no agents available. Please try later",
+			"ChatTitle": "Live Chat!",
+			"ChatEnd": "X",
+			"ChatClose": "X",
+			"ChatMinimize": "Min",
+			"ChatFormFirstName": "First Name",
+			"ChatFormLastName": "Last Name",
+			"ChatFormNickname": "Nickname",
+			"ChatFormEmail": "Email",
+			"ChatFormSubject": "Subject",
+			"ChatFormPlaceholderFirstName": "Optional",
+			"ChatFormPlaceholderLastName": "Optional",
+			"ChatFormPlaceholderNickname": "Optional",
+			"ChatFormPlaceholderEmail": "Optional",
+			"ChatFormPlaceholderSubject": "Optional",
+			"ChatFormSubmit": "Start Chat",
+			"ChatFormCancel": "Cancel",
+			"ChatInputPlaceholder": "Type your message here and hit return",
+			"ChatInputSend": "SEND",
+			"ChatEndQuestion": "Are you sure you want to end this chat session?",
+			"ChatEndCancel": "Cancel",
+			"ChatEndConfirm": "End chat",
+			"ActionsDownload": "Download transcript",
+			"ActionsEmail": "Email transcript",
+			"ActionsPrint": "Print transcript",
+			"ActionsCobrowseStart": "Start Co-browse",
+			"ActionsCobrowseStop": "Exit Co-browse",
+			"ActionsVideo": "Invite to Video Chat",
+			"InviteTitle": "Need help?",
+			"InviteBody": "Let us know if we can help out.",
+			"InviteReject": "No thanks",
+			"InviteAccept": "Start chat",
+			"RestoreTimeoutTitle": "Chat ended",
+			"RestoreTimeoutBody": "Your previous chat session has timed out. Would you like to start a new one?",
+			"RestoreTimeoutReject": "No thanks",
+			"RestoreTimeoutAccept": "Start chat",
+			"EndConfirmBody": "Would you really like to end your chat session?",
+			"EndConfirmAccept": "End chat",
+			"EndConfirmReject": "Cancel",
+			"SYS0001": "An Agent will be with you shortly",
+			"AriaYouSaid": "You said",
+    		"AriaSaid": "said",
+    		"AriaSystemSaid": "System said",
+    		"AriaMinimize": "Live Chat minimize",
+    		"AriaMaximize": "Live Chat Maximize",
+    		"AriaClose": "Live chat close",
+			"ChatErrorButton": "Ok",
+			"IdleMessage1": "If left inactive, your session will end soon. - en",
+			"IdleMessage2": "If left inactive, your session will end in - en",
+			"IdleMessageClose": "Your chat session has ended due to inactivity.",
+
+			"Errors": {
+
+				"ChatUnavailable": "We're sorry but we cannot start a new chat at this time. Please try again later",
+				"CriticalFault": "Your chat session has ended unexpectedly due to an unknown issue. We apologize for the inconvenience",
+				"StartFailed": "There was an issue starting your chat session. Please verify your connection and that you submitted all required information properly, then try again",
+				"MessageFailed": "Your message was not received successfully. Please try again",
+				"RestoreFailed": "We're sorry but we were unable to restore your chat session due to an unknown error",
+				"TransferFailed": "Unable to transfer chat at this time. Please try again later",
+				"FileTransferSizeError":"The file could not be sent.<br/><strong><p class='filename' title='<%FilenameFull%>'>'<%FilenameTruncated%>'</p></strong><p class='cx-advice'>File size is larger than the allowed size (<%MaxSizePerFile%>)</p>",
+				"InviteFailed": "Unable to generate invite at this time. Please try again later",
+				"ChatServerWentOffline": "Messages are currently taking longer than normal to get through. We're sorry for the delay",
+				"RestoredOffline": "Messages are currently taking longer than normal to get through. We're sorry for the delay",
+				"Disconnected": "<div style='text-align:center'>Connection lost</div>",
+				"Reconnected": "<div style='text-align:center'>Connection restored</div>",
+				"102": "First name is required",
+				"103": "Last name is required",
+				"161": "Please enter your name",
+				"201": "The file could not be sent.<br/><strong><p class='filename' title='<%FilenameFull%>'>'<%FilenameTruncated%>'</p></strong><p class='cx-advice'>The maximum number of attached files would be exceeded (<%MaxFilesAllowed%>)</p>",
+				"202": "The file could not be sent.<br/><strong><p class='filename' title='<%FilenameFull%>'>'<%FilenameTruncated%>'</p></strong><p class='cx-advice'>Upload limit and/or maximum number of attachments would be exceeded (<%MaxAttachmentsSize%>)</p>",
+				"203": "The file could not be sent.<br/><strong><p class='filename' title='<%FilenameFull%>'>'<%FilenameTruncated%>'</p></strong><p class='cx-advice'>File type is not allowed.</p>",
+				"204": "We're sorry but your message is too long. Please write a shorter message",
+				"240": "We're sorry but we cannot start a new chat at this time. Please try again later",
+				"364": "Invalid email address"
+			}
+		},
+
+		"cobrowse": {
+
+			"agentJoined": "Representative has joined the session",
+			"youLeft": "You have left the session. Co-browse is now terminated.",
+			"sessionTimedOut": "Session timed out. Co-browse is now terminated.",
+			"sessionInactiveTimedOut": "Session timed out. Co-browse is now terminated.",
+			"agentLeft": "Representative has left the session. Co-browse is now terminated.",
+			"sessionError": "Unexpected error occured. Co-browse is now terminated.",
+			"sessionStarted": "Co-browse session started. Waiting for representative to connect to the session…",
+			"navRefresh": "Representative has refreshed the page. Reloading.",
+			"navBack": "Representative has pressed the \"Back\" button. Reloading page.",
+			"navForward": "Representative has pressed the \"Forward\" button. Reloading page.",
+			"navUrl": "Representative has requested navigation. Reloading page.",
+			"navFailed": "Navigation request by representative has failed.",
+			"toolbarContent": "Session ID: {sessionId}",
+			"contentMasked": "Content is hidden from representative",
+			"contentMaskedPartially": "Some content is hidden from representative",
+			"exitBtnTitle": "Exit Co-browse session",
+			"areYouOnPhone": "Are you on the phone with our representative?",
+			"areYouOnPhoneOrChat": "Are you on the phone or chat with our representative?",
+			"connectBeforeCobrowse": "You need to be connected with our representative to continue with co-browsing. Please call us or start a live chat with us, and then start Co-browse again.",
+			"sessionStartedAutoConnect": "Co-browse session started. Waiting for representative to connect to the session…",
+			"browserUnsupported": "Unfortunately, your browser is not currently supported.<br><br> Supported browsers are: <ul><li><a target='_blank' href='http://www.google.com/chrome'>Google Chrome</a></li><li><a target='_blank' href='http://www.firefox.com/'>Mozilla Firefox</a></li><li><a target='_blank' href='http://microsoft.com/ie'>Internet Explorer 9 and above</a></li><li><a target='_blank' href='https://www.apple.com/safari'>Safari 6 and above</a></li></ul>",
+			"chatIsAlreadyRunning": "Chat is already running on another page.",
+			"modalYes": "Yes",
+			"modalNo": "No"
+		},
+
+		"sendmessage": {
+
+			"SendMessageButton": "Send Message",
+			"Title": "Send Message!",
+			"FirstName": "First Name",
+			"LastName": "Last Name",
+			"Email": "Email",
+			"Subject": "Subject",
+			"Attachfiles": "Attach files",
+			"Send": "Send",
+			"Sent": "Your message has been sent.",
+			"Close": "Close",
+			"PlaceholderFirstName": "Required",
+		    "PlaceholderLastName": "Required",
+		    "PlaceholderEmail": "Required",
+		    "PlaceholderSubject": "Required",
+			"PlaceholderTypetexthere": "Type your text here...",
+			"EmailOk": "Ok",
+			"ConfirmCloseWindow":"Are you sure you want to close the Send Message widget?",
+			"Cancel": "Cancel",
+
+			"Errors": {
+
+				"connectionError": "Unable to reach server. Please try again.",
+				"unknowError": "Something went wrong, we apologize for the inconvenience. Please check your connection settings and try again.",
+				"attachmentsLimit": "Total number of attachments exceeds limit: ",
+				"attachmentsSize": "Total size of attachments exceeds limit: ",
+				"invalidFileType": "Unsupported file type. Please upload images, PDFs, text files and ZIPs.",
+				"invalidFromEmail": "Invalid email - From address.",
+				"invalidMailbox": "Invalid email - To address.",
+
+				"102": "First Name required",
+				"103": "Last Name required",
+				"104": "Subject required",
+				"181": "Email address required",
+				"182": "Message text content required"
+			}
+		},
+
+		"offers": {
+
+		    "offer1A": {
+
+		        "title": "title1A",
+		        "headline": "headline1A",
+		        "body": "body1A",
+		        "button": "button1A",
+		        "ctaURL": "https://www.google.com",
+		        "video": "http://www.youtube.com/watch?v=PBgi8i6rULY&index=19",
+		        "image": "../webapp/img/cx_offer.png"
+		    },
+
+		    "offer1B": {
+
+		        "title": "title1B",
+		        "headline": "headline1B",
+		        "body": "body1B",
+		        "button": "button1B",
+		        "ctaURL": "https://www.google.com",
+		        "video": "http://www.youtube.com/watch?v=PBgi8i6rULY&index=19",
+		        "image": "../webapp/img/cx_offer.png"
+		    },
+
+		    "offer1C": {
+
+		        "title": "title1C",
+		        "headline": "headline1C",
+		        "body": "body1C",
+		        "button": "button1C",
+		        "ctaURL": "https://www.google.com",
+		        "video": "http://www.you.com/watch?v=PBgi8i6rULY&index=19",
+		        "image": "../webapp/img/cx_offer.png"
+		    }
+		},
+
+
+		"callus": {
+
+			"CallUsTitle": "CallUsTitle - en",
+			"ContactsHeader": "ContactsHeader - en",
+			"CancelButtonText": "CancelButtonText - en",
+			"Number001": "Number001 - en",
+			"Number002": "Number002 - en",
+			"Number003": "Number003 - en"
+		},
+
+		"channelselector":{
+
+			"Title": "Live Assistance",
+			"TitleDescription": "How would you like to get in touch?",
+			"WaitTimeTitle": "Wait Time",
+			"AvailableTitle": "Available",
+			"UnavailableTitle": "Unavailable",
+			"ChatTitle": "Web chat",
+			"CallusTitle": "Call us",
+			"EmailTitle": "Send message",
+			"CallbackTitle": "Callback",
+			"CobrowseButtonText": "Co-browse",
+			"SearchTitle": "Search"
+		},
+
+		"sidebar": {
+
+			"SidebarTitle": "Need help? - en",
+			"ChannelSelectorName": "Live Assistance - en",
+			"ChannelSelectorTitle": "Get assistance from one of our agents right away - en",
+			"SearchName": "Search - en",
+			"SearchTitle": "Search - en",
+			"OffersName": "Offers",
+			"OffersTitle": "Offers",
+			"CallUsName": "Call Us",
+			"CallUsTitle": "Call Us details",
+			"CallbackName": "Callback",
+			"CallbackTitle": "Receive a Call",
+			"SendMessageName": "Send Message",
+			"WebChatName": "Live Chat",
+			"WebChatTitle": "Live Chat",
+			"ClickToCallName": "Click To Call",
+			"ClickToCallTitle": "Click to Call"
+
+		},
+
+		"callback": {
+
+			"CallbackTitle": "Receive a Call",
+			"CancelButtonText": "Cancel",
+			"ConfirmButtonText": "Confirm",
+			"CallbackFirstName": "First Name",
+			"CallbackPlaceholderRequired": "Required",
+			"CallbackPlaceholderOptional": "Optional",
+			"CallbackLastName": "Last Name",
+			"CallbackPhoneNumber": "Phone",
+			"CallbackQuestion": "When should we call you?",
+			"CallbackDayLabels": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+			"CallbackMonthLabels": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+			"CallbackConfirmDescription": "You're booked in!",
+			"CallbackNumberDescription": "We will call you at the number provided:",
+			"CallbackNotes": "Notes",
+			"CallbackDone": "Close",
+			"CallbackOk": "Okay",
+			"CallbackCloseConfirm": "Are you sure you want to cancel arranging this callback?",
+			"CallbackNoButtonText": "No",
+			"CallbackYesButtonText": "Yes",
+			"CallbackWaitTime": "Wait Time",
+			"CallbackWaiTimeText": "min wait",
+			"CallbackOptionASAP": "As soon as possible",
+			"CallbackOptionPickDateTime": "Pick date & time",
+			"CallbackPlaceholderCalendar": "Select Date & Time",
+			"AriaMinimize": "Callback minimize",
+			"AriaMaximize": "Callback Maximize",
+			"AriaClose": "Callback close",
+			"Errors": {
+				"unknownError": "Something went wrong, we apologize for the inconvenience. Please check your connection settings and try again.",
+				"phoneNumberRequired": "Phone number is required."
+			}
+		},
+
+		"calendar": {
+
+			"CalendarDayLabels": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+			"CalendarMonthLabels": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"],
+			"CalendarLabelToday": "Today",
+			"CalendarLabelTomorrow": "Tomorrow",
+    		"CalendarLabelMorning": "Morning",
+    		"CalendarLabelAfternoon": "Afternoon",
+    		"CalendarLabelEvening": "Evening",
+    		"CalendarTitle": "Schedule a Call",
+    		"CalendarOkButtonText": "Okay",
+			"CalendarError": "Unable to fetch availability details.",
+			"CalendarClose": "Cancel"
+		},
+
+		"knowledgecenter": {
+
+			"Yes": "Yes",
+			"No": "No",
+			"Close": "Close",
+			"ArticleHelpfulnessYes": "Article Helpfulness - \"Yes\"",
+			"ArticleHelpfulnessYesDesc": "Great! We're very pleased to hear that the article assisted you in your search. Have a great day!",
+			"ArticleHelpfulnessNo": "Article Helpfulness - \"No\"",
+			"ArticleHelpfulnessNoDesc": "We're sorry that the article wasn't a good match for your search. We thank you for your feedback!",
+			"SidebarButton": "Search",
+			"SearchButton": "Search",
+			"Title": "Ask a Question",
+			"Ask": "Ask",
+			"Categories": "Categories",
+			"NoResults": "No Results",
+			"NoResultsTextUnder": "We're sorry but we could not find a suitable answer for you.",
+			"NoResultsTextRephrase": "Could you please try rephrasing the question?",
+			"WasThisHelpful": "Was this helpful?",
+			"TypeYourQuestion": "Type your question",
+			"Back": "Back",
+			"More": "More",
+			"Error": "Error!",
+			"GKCIsUnavailable": "Knowledge Center Server is currently not available",
+			"KnowledgeAgentName": "Knowledge Center",
+			"WelcomeMessage": "Hello and Welcome! A Live agent will be with you shortly. In the meantime, can I assist you with any questions you may have? Please type a question into the input field below.",
+			"SearchResult": "While waiting for an Agent to connect, here are the most relevant answers to your query:",
+			"NoDocumentsFound": "I'm sorry. No articles matched your question. Would you like to ask another question?",
+			"FeedbackQuestion": "Was this helpful?",
+			"FeedbackAccept": "Yes",
+			"FeedbackDecline": "No",
+			"TranscriptMarker": "KnowledgeCenter: ",
+			"SearchMessage": "Search with query \"<%SearchQuery%>\"↲",
+			"VisitMessage": "Visit for document \"<%VisitQuery%>\"",
+			"AnsweredMessage": "Results for query \"<%AnsweredQuery%>\" have been marked as relevant.",
+			"UnansweredMessage": "Results for query \"<%UnansweredQuery%>\" have been marked as unanswered.",
+			"PositiveVoteMessage": "Positive voting for document \"<%VoteQuery%>\"",
+			"NegativeVoteMessage": "Negative voting for document \"<%VoteQuery%>\""
+		},
+
+		"clicktocall" : {
+			"Title": "Click to Call",
+			"FirstName": "First Name",
+			"PlaceholderRequired": "Required",
+			"PlaceholderOptional": "Optional",
+			"LastName": "Last Name",
+			"PhoneNumber": "Phone",
+			"WaitTime": "Wait Time",
+			"FormCancel": "Cancel",
+			"FormSubmit": "Request a number",
+			"PhoneLabel": "Dial in now",
+			"AccessLabel": "Access Code",
+			"ExpireLabel": "Number Expires in",
+			"DisplayClose": "Close",
+			"NetworkFail": "Something went wrong, we apologize for the inconvenience. Please check your connection settings and try again.",
+			"NetworkRetry": "OK",
+			"InvalidAccept": "OK",
+			"PhoneExpired" : "Phone number has expired!",
+			"PhoneReRequest": "Request a new number",
+			"LocalFormValidationEmptyPhoneNumber" : "Please enter a phone number",
+			"LocalFormValidationNumbersOnly" : "Please enter 0-9 digits only"
+		}
+	},
+
+	"ru": {
+
+		"custom": {
+
+			"String01": "String-1",
+			"String02": "String-2",
+			"String03": "String-3",
+			"String04": "String-4",
+			"Disclaimer": "Ми використовуємо кукі, добре? Це 2017 рік, чи всі знають про \"кукі\" ще?"
+		},
+
+		"webchat": {
+
+			"ChatButton": "чат",
+			"ChatStarted": "общение началось",
+			"ChatEnded": "чат состава",
+			"ChatFailed": "Был проблема запуска сеанс. Пожалуйста, повторите попытку",
+			"ChatFailedRetry": "попробуйте",
+			"ChatFailedClose": "закрывать",
+			"AgentNameDefault": "агент",
+			"AgentConnected": "<%Agent%> связанный",
+			"AgentDisconnected": "<%Agent%> отключен",
+			"AgentTyping": "<%Agent%> печатает",
+			"AgentUnavailable": "Извините. Там нет агентов, доступных . Пожалуйста, попробуйте позже",
+			"ChatTitle": "Живой чат",
+			"ChatEnd": "Конец Чат",
+			"ChatClose": "близко",
+			"ChatMinimize": "Min",
+			"ChatFormFirstName": "имя",
+			"ChatFormLastName": "фамилия",
+			"ChatFormNickname": "прозвище",
+			"ChatFormEmail": "Email",
+			"ChatFormSubject": "предмет",
+			"ChatFormPlaceholderFirstName": "Необязательный",
+			"ChatFormPlaceholderLastName": "Необязательный",
+			"ChatFormPlaceholderNickname": "Необязательный",
+			"ChatFormPlaceholderEmail": "Необязательный",
+			"ChatFormPlaceholderSubject": "Необязательный",
+			"ChatFormSubmit": "Начать Чат",
+			"ChatFormCancel": "Отмена",
+			"ChatInputPlaceholder": "Пишите ваше сообщение здесь",
+			"ChatInputSend": "слать",
+			"CoBrowseStart": "Начать Cobrowse",
+			"ChatEndQuestion": "Вы уверены, что хотите закончить эту сессию чата?",
+			"ChatEndCancel": "Отмена",
+			"ChatEndConfirm": "Конец чат",
+			"ActionsDownload": "Скачать запись",
+			"ActionsEmail": "E-mail стенограммы",
+			"ActionsPrint": "Печать стенограмма",
+			"ActionsCobrowseStart": "Начало Со-Обзор",
+			"ActionsCobrowseStop": "Выход Со-Обзор",
+			"ActionsVideo": "Пригласить в видео чат",
+			"InviteTitle": "Нужна помощь?",
+			"InviteBody": "Дайте нам знать, если мы можем помочь.",
+			"InviteReject": "Нет, спасибо",
+			"InviteAccept": "Начните чат",
+			"EndConfirmBody": "Вы действительно хотите завершить сеанс?",
+			"EndConfirmAccept": "Конец чат",
+			"EndConfirmReject": "Отмена",
+			"SYS0001": "Агент будет с Вами в ближайшее время",
+			"AriaYouSaid": "Ты сказал",
+    		"AriaSaid": "сказал",
+    		"AriaSystemSaid": "система сказал",
+    		"AriaMinimize": "Чат общение свести к минимуму",
+    		"AriaMaximize": "Живой чат разворачивания",
+    		"AriaClose": "Живой чат близко",
+			"ChatErrorButton": "ОК - ru",
+			"IdleMessage1": "Если вы останетесь неактивными, ваша сессия скоро закончится.",
+			"IdleMessage2": "Если вы остаетесь неактивным, ваша сессия закончится",
+			"IdleMessageClose": "Ваша чат-сессия закончилась из-за бездействия.",
+
+			"Errors": {
+
+				"ChatUnavailable": "We're sorry but we cannot start a new chat at this time. Please try again later - ru",
+				"CriticalFault": "Your chat session has ended unexpectedly due to an unknown issue. We apologize for the inconvenience - ru",
+				"StartFailed": "There was an issue starting your chat session. Please verify your connection and that you submitted all required information properly, then try again - ru",
+				"MessageFailed": "Your message was not received successfully. Please try again - ru",
+				"RestoreFailed": "We're sorry but we were unable to restore your chat session due to an unknown error- ru",
+				"TransferFailed": "Unable to transfer chat at this time. Please try again later - ru",
+				"FileTransferSizeError":"The file could not be sent - ru.<br/><strong><p class='filename' title='<%FilenameFull%>'>'<%FilenameTruncated%>'</p></strong><p class='cx-advice'>File size is larger than the allowed size (<%MaxSizePerFile%>)</p>",
+				"InviteFailed": "Unable to generate invite at this time. Please try again later - ru",
+				"ChatServerWentOffline": "Messages are currently taking longer than normal to get through. We're sorry for the delay - ru",
+				"RestoredOffline": "Messages are currently taking longer than normal to get through. We're sorry for the delay - ru",
+				"Disconnected": "<div style='text-align:center'>Connection lost - ru</div>",
+				"Reconnected": "<div style='text-align:center'>Connection restored - ru</div>",
+				"102": "Имя требуется",
+				"103": "Фамилия обязательна",
+				"161": "Пожалуйста, введите Ваше имя",
+				"201": "The file could not be sent - ru.<br/><strong><p class='filename' title='<%FilenameFull%>'>'<%FilenameTruncated%>'</p></strong><p class='cx-advice'>The maximum number of attached files would be exceeded (<%MaxFilesAllowed%>)</p>",
+				"202": "The file could not be sent - ru.<br/><strong><p class='filename' title='<%FilenameFull%>'>'<%FilenameTruncated%>'</p></strong><p class='cx-advice'>Upload limit and/or maximum number of attachments would be exceeded (<%MaxAttachmentsSize%>)</p>",
+				"203": "The file could not be sent - ru.<br/><strong><p class='filename' title='<%FilenameFull%>'>'<%FilenameTruncated%>'</p></strong><p class='cx-advice'>File type is not allowed.</p>",
+				"204": "We're sorry but your message is too long. Please write a shorter message - ru",
+				"240": "We're sorry but we cannot start a new chat at this time. Please try again later - ru",
+				"364": "Неверный адрес электронной почты"
+			}
+		},
+
+		"cobrowse": {
+
+			"agentJoined": "Представитель присоединился к сессии",
+			"youLeft": "Вы покинули заседание. Со-просмотра теперь прекращено.",
+			"sessionTimedOut": "Сессия тайм-аут. Со-просмотра теперь прекращено.",
+			"sessionInactiveTimedOut": "Сессия тайм-аут. Со-просмотра теперь прекращено.",
+			"agentLeft": "Представитель покинули заседание. Со-просмотра теперь прекращено.",
+			"sessionError": "Неожиданная ошибка произошла. Со-просмотра теперь прекращено.",
+			"sessionStarted": "Со-просмотра сессия началась. В ожидании представителя для подключения к сессии ...",
+			"navRefresh": "Представитель обновляется страницу. Перезагрузка.",
+			"navBack": "Представитель нажал \"Назад\" кнопку. Перезагрузка страницы.",
+			"navForward": "Представитель нажал кнопку \"Вперед\". Перезагрузка страницы.",
+			"navUrl": "Представитель просил навигации. Перезагрузка страницы.",
+			"navFailed": "Запрос Навигация представителя не удалось.",
+			"toolbarContent": "идентификатор сессии: {sessionId}",
+			"contentMasked": "Содержимое скрыто от представителя",
+			"contentMaskedPartially": "Некоторое содержимое скрыто от представителя",
+			"exitBtnTitle": "Выход Со-сеанс просмотра",
+			"areYouOnPhone": "Вы по телефону с нашим представителем?",
+			"areYouOnPhoneOrChat": "Вы по телефону или прямо с нашего представителя?",
+			"connectBeforeCobrowse": "Вы должны быть связаны с нашим представителем, чтобы продолжить совместно просмотра. Пожалуйста, позвоните нам или начать чат с нами, а затем начать Со-просмотреть еще раз.",
+			"sessionStartedAutoConnect": "Со-просмотра сессия началась. В ожидании представителя для подключения к сессии ...",
+			"browserUnsupported": "К сожалению, ваш браузер не поддерживается.<br><br> Поддерживаемые браузеры: <ul><li><a target='_blank' href='http://www.google.com/chrome'>Google Chrome</a></li><li><a target='_blank' href='http://www.firefox.com/'>Mozilla Firefox</a></li><li><a target='_blank' href='http://microsoft.com/ie'>Internet Explorer 9 and above</a></li><li><a target='_blank' href='https://www.apple.com/safari'>Safari 6 and above</a></li></ul>",
+			"chatIsAlreadyRunning": "Чат уже работает на другой странице.",
+			"modalYes": "да",
+			"modalNo": "Нет"
+		},
+
+		"sendmessage": {
+
+			"SendMessageButton": "Отправить сообщение",
+			"Title": "Отправить сообщение",
+			"FirstName": "Имя",
+			"LastName": "Фамилия",
+			"Email": "Эл. адрес",
+			"Subject": "Предмет",
+			"Attachfiles": "Прикрепить файлы",
+			"Send": "послать",
+			"Sent": "Ваше сообщение было отправлено.",
+			"Close": "Закрыть",
+			"SendMessageTitle": "Отправить сообщение",
+			"PlaceholderFirstName": "необходимые",
+		    "PlaceholderLastName": "необходимые",
+		    "PlaceholderEmail": "необходимые",
+		    "PlaceholderSubject": "необходимые",
+			"PlaceholderTypetexthere": "Вводите текст здесь...",
+			"EmailOk": "ОК",
+			"ConfirmCloseWindow":"Вы действительно хотите закрыть виджет Отправить сообщение?",
+			"Cancel": "Отмена",
+
+			"Errors": {
+
+				"connectionError": "Невозможно достичь сервера. Пожалуйста, попробуйте еще раз.",
+				"unknowError": "Что-то пошло не так. Пожалуйста, попробуйте еще раз.",
+				"attachmentsLimit": "Общее количество вложений превышает предел: ",
+				"attachmentsSize": "Общий размер вложений превышает предел: ",
+				"invalidFileType": "Неподдерживаемый тип файла. Пожалуйста, загружать изображения, PDF-файлы, текстовые файлы и ZIP-",
+				"invalidFromEmail": "Неверный адрес электронной почты - адрес отправителя.",
+				"invalidMailbox": "Неверный адрес электронной почты - Для решения.",
+
+				"102": "требуется Имя",
+				"103": "требуется Фамилия",
+				"104": "Тема (обязательно",
+				"181": "Адрес электронной почты требуется",
+				"182": "содержимое текстового сообщения требуется"
+			}
+		},
+
+		"offers": {
+
+			"offer1A": {
+
+				"title": "требуется Фамилия",
+				"headline": "headline1A",
+				"body": "body1A",
+				"button": "button1A",
+				"ctaURL": "https://www.google.com",
+				"video": "http://www.youtube.com/watch?v=PBgi8i6rULY&index=19",
+				"image": "../webapp/img/cx_offer.png"
+			},
+
+			"offer1B": {
+
+				"title": "требуется Фамилия",
+				"headline": "headline1B",
+				"body": "body1B",
+				"button": "button1B",
+				"ctaURL": "https://www.google.com",
+				"video": "http://www.youtube.com/watch?v=PBgi8i6rULY&index=19",
+				"image": "../webapp/img/cx_offer.png"
+			},
+
+			"offer1C": {
+
+				"title": "требуется Фамилия",
+				"headline": "headline1C",
+				"body": "body1C",
+				"button": "button1C",
+				"ctaURL": "https://www.google.com",
+				"video": "http://www.you.com/watch?v=PBgi8i6rULY&index=19",
+				"image": "../webapp/img/cx_offer.png"
+			}
+		},
+
+		"callus":{
+
+			"CallUsTitle": "CallUsTitle - ru",
+			"ContactsHeader": "ContactsHeader - ru",
+			"CancelButtonText": "CancelButtonText - ru",
+			"Number001": "Number001 - ru",
+			"Number002": "Number002 - ru",
+			"Number003": "Number003 - ru"
+		},
+
+		"channelselector":{
+
+			"Title": "Живая помощь",
+			"TitleDescription": "Как бы вы хотели , чтобы войти в контакт?",
+			"WaitTimeTitle": "Время ожидания",
+			"AvailableTitle": "Доступный",
+			"UnavailableTitle": "Недоступен",
+			"ChatTitle": "веб-чат",
+			"CallusTitle": "Позвоните нам",
+			"EmailTitle": "Отправить сообщение",
+			"CallbackTitle": "Перезвони",
+			"CobrowseButtonText": "Co-просмотра",
+			"SearchTitle": "Поиск"
+
+		},
+
+		"sidebar": {
+
+			"SidebarTitle": "Нужна помощь?",
+			"ChannelSelectorName": "Живая помощь",
+			"ChannelSelectorTitle": "Немедленно получите помощь от одного из наших агентов",
+			"SearchName": "Поиск",
+			"SearchTitle": "Поиск",
+			"OffersName": "Предложения",
+			"OffersTitle": "Предложения",
+			"CallUsName": "Позвоните нам",
+			"CallUsTitle": "Позвоните нам подробнее",
+			"CallbackName": "Перезвони",
+			"CallbackTitle": "Получить звонок",
+			"SendMessageName": "Отправить сообщение",
+			"SendMessageTitle": "Отправить сообщение",
+			"WebChatName": "Живой чат",
+			"WebChatTitle": "Живой чат",
+			"ClickToCallName": "Отправить",
+			"ClickToCallTitle": "Отправить"
+		},
+
+		"callback": {
+
+			"CallbackTitle": "Получить звонок",
+			"CancelButtonText": "Отмена",
+			"ConfirmButtonText": "подтвердить",
+			"CallbackFirstName": "Имя",
+			"CallbackPlaceholderRequired": "необходимые",
+			"CallbackPlaceholderOptional": "Необязательный",
+			"CallbackLastName": "Фамилия",
+			"CallbackPhoneNumber": "Телефон",
+			"CallbackQuestion": "Когда мы должны позвонить вам?",
+			"CallbackDayLabels": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+			"CallbackMonthLabels": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+			"CallbackConfirmDescription": "Вы забронированы!",
+			"CallbackNumberDescription": "Мы позвоним вам по указанному номеру:",
+			"CallbackNotes": "Заметки",
+			"CallbackDone": "Закрыть",
+			"CallbackOk": "Хорошо",
+			"CallbackCloseConfirm": "Вы действительно хотите отменить организацию этого обратного вызова?",
+			"CallbackNoButtonText": "нет",
+			"CallbackYesButtonText": "да",
+			"CallbackWaitTime": "Время ожидания",
+			"CallbackWaiTimeText": "min wait",
+			"CallbackOptionASAP": "Как можно быстрее",
+			"CallbackOptionPickDateTime": "Выберите дату и время",
+			"CallbackPlaceholderCalendar": "Выберите дату и время",
+			"AriaMinimize": "Сведение к минимуму",
+			"AriaMaximize": "Обратный звонок",
+			"AriaClose": "Обратная связь",
+			"Errors": {
+				"unknownError": "Что-то пошло не так, мы приносим извинения за неудобства. Проверьте настройки подключения и повторите попытку.",
+				"phoneNumberRequired": "Требуется номер телефона."
+			}
+		},
+
+		"calendar": {
+
+			"CalendarDayLabels": ["Воскресенье","понедельник","вторник","среда","Четверг","пятница","суббота"],
+			"CalendarMonthLabels": ["январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],
+			"CalendarLabelToday": "Cегодня",
+			"CalendarLabelTomorrow": "Завтра",
+    		"CalendarLabelMorning": "утро",
+    		"CalendarLabelAfternoon": "После полудня",
+    		"CalendarLabelEvening": "Вечер",
+    		"CalendarTitle": "График вызова",
+    		"CalendarOkButtonText": "Хорошо",
+			"CalendarError": "Не удалось получить подробности доступности.",
+			"CalendarClose": "Отмена"
+		},
+
+		"knowledgecenter": {
+
+			"Yes": "да",
+			"No": "Нет",
+			"Close": "закрывать",
+			"ArticleHelpfulnessYes": "Статья Полезность - \"да\"",
+			"ArticleHelpfulnessYesDesc": "Большой! Мы очень рады услышать, что эта статья помогала вам в вашем поиске. Хорошего дня!",
+			"ArticleHelpfulnessNo": "Статья Полезность - \"Нет\"",
+			"ArticleHelpfulnessNoDesc": "Мы сожалеем, что эта статья не был хороший матч для поиска. Мы благодарим Вас за Ваш отзыв!",
+			"SidebarButton": "Поиск",
+			"SearchButton": "Поиск",
+			"Title": "Задайте вопрос",
+			"Ask": "просить",
+			"Categories": "категории",
+			"NoResults": "Нет результатов",
+			"NoResultsTextUnder": "Мы сожалеем, но мы не смогли найти подходящий ответ для вас.",
+			"NoResultsTextRephrase": "Не могли бы вы попробовать перефразировать вопрос?",
+			"WasThisHelpful": "Было ли это полезно?",
+			"TypeYourQuestion": "Введите свой вопрос",
+			"Back": "назад",
+			"More": "Больше",
+			"Error": "Ошибка!",
+			"GKCIsUnavailable": "Центр знаний сервера в настоящее время не доступен",
+			"KnowledgeAgentName": "Центр знаний",
+			"WelcomeMessage": "Привет и добро пожаловать! Живым агентом будет с вами в ближайшее время. В то же время, я могу помочь Вам с любыми вопросами вы можете иметь? Пожалуйста, введите вопрос в поле ввода ниже.",
+			"SearchResult": "While waiting for an Agent to connect, here are the most relevant answers to your query:",
+			"NoDocumentsFound": "Прости. Статьи не соответствует ваш вопрос. Вы хотели бы задать еще один вопрос?",
+			"FeedbackQuestion": "Было ли это полезно?",
+			"FeedbackAccept": "да",
+			"FeedbackDecline": "Нет",
+			"TranscriptMarker": "Центрзнаний: ",
+			"SearchMessage": "Поиск с запросом \"<%SearchQuery%>\"↲",
+			"VisitMessage": "Посещение для документа \"<%VisitQuery%>\"",
+			"AnsweredMessage": "Результаты поиска по запросу запроса \"<%AnsweredQuery%>\" были отмечены как имеющие отношение.",
+			"UnansweredMessage": "Результаты поиска по запросу запроса \"<%UnansweredQuery%>\" были отмечены как имеющие отношение",
+			"PositiveVoteMessage": "Позитивное голосование за документ \"<%VoteQuery%>\"",
+			"NegativeVoteMessage": "Позитивное голосование за документ \"<%VoteQuery%>\""
+		},
+
+		"clicktocall": {
+
+			"Title": "Нажмите чтобы позвонить",
+			"FirstName": "Имя",
+			"PlaceholderRequired": "необходимые",
+			"PlaceholderOptional": "Необязательный",
+			"LastName": "Фамилия",
+			"PhoneNumber": "Телефон",
+			"WaitTime": "Время ожидания",
+			"FormCancel": "Отмена",
+			"FormSubmit": "Запросить номер",
+			"PhoneLabel": "Наберите сейчас",
+			"AccessLabel": "Код доступа",
+			"ExpireLabel": "Число истекает в",
+			"DisplayClose": "Закрыть",
+			"NetworkFail": "Что-то пошло не так, мы приносим извинения за неудобства. Проверьте настройки подключения и повторите попытку.",
+			"NetworkRetry": "OK",
+			"InvalidAccept": "OK",
+			"PhoneExpired" : "Номер телефона истек!",
+			"PhoneReRequest": "Запросить новый номер",
+			"LocalFormValidationEmptyPhoneNumber" : "Введите номер телефона",
+			"LocalFormValidationNumbersOnly" : "Введите только 0-9 цифр"
+		}
+
+	}
+}
+
+
+
+
+
+
+

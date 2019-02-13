@@ -1,0 +1,191 @@
+<%
+	var header = verticalConfig.header || {};
+	var clientSettings = verticalConfig.client_settings || {};
+%>
+<!--[if lt IE 8]>
+	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<div class="mobile-menu-btn"><i class="fa fa-bars" aria-hidden="true"></i></div>
+<div class="mobile-nav-list">
+	<a href="#" class="close-btn"><i class="fa fa-times"></i></a>
+	<ul class="nav-list">
+		<!-- ko ifnot: authenticated -->
+		<li class="m-nav-btn"><a href="#login">Login</a></li>
+		<!-- /ko -->
+		<!-- ko foreach: menus -->
+			<!-- ko if: !authenticated || (authenticated && $root.authenticated())  -->
+			<li class="m-nav-btn"><a data-bind="text: title, attr: { href: href }"></a></li>
+			<!-- /ko -->
+		<!-- /ko -->
+
+		<li class="m-nav-btn" data-bind="click: toggleLanguages, clickBubble: false">
+			<i class="mobile-nav-icon fa fa-globe"></i>&nbsp;
+			<a>Language</a>&nbsp;
+			<!-- ko if: !languagesExpanded() -->
+			<i class="mobile-nav-icon fa fa-caret-right"></i>
+			<!-- /ko -->
+			<!-- ko if: languagesExpanded -->
+			<i class="mobile-nav-icon fa fa-caret-down"></i>
+			<!-- /ko -->
+		</li>
+		<!-- ko foreach: availableLanguages -->
+		<li class="m-nav-btn" data-bind="visible: $parent.languagesExpanded">
+			<a data-bind="text: name, click: function() { $parent.selectLanguage(key) }" /></a>
+		</li>
+		<!-- /ko -->
+
+		<!-- ko if: authenticated -->
+		<li class="m-nav-btn"><a href="<%=verticalPath%>/logout">Log Out</a></li>
+		<!-- /ko -->
+	</ul>
+</div>
+</div>
+<div class="overlay"></div>
+
+<div class="header-container">
+	<div class="page-width">
+		<div class="left-header header-ib">
+			<a href="home">
+				<img class="img-logo" src="<%=verticalPath%>/images/header/logo.png">
+			</a>
+		</div>
+		<div class="right-header header-ib">
+			<div class="user-info-box">
+				<!-- ko if: authenticated -->
+				<span class="name" data-bind="text: fullName"></span>
+				<!-- /ko -->
+			</div>
+			<div class="top-bar">
+				<div class="search-box">
+					<form id="search" action="search" method="GET" accept-charset="utf-8" data-bind="submit: search">
+						<input id="search-kc" type="text" name="q" placeholder="<%=header.search || 'Search...'%>">
+						<button class="fg-btn"> <i class="search-icon"></i></button>
+					</form>
+				</div>
+				<!-- ko ifnot: authenticated -->
+				<a href="#login"><button class="minilogin-btn fg-btn"><%=header.login || 'Log In'%></button></a>
+				<!-- /ko -->
+				<!-- ko if: authenticated -->
+				<a href="<%=verticalPath%>/logout"><button class="minilogin-btn fg-btn"><%=header.logout || 'Log Out'%></button></a>
+				<!-- /ko -->
+				<div class="header-social-icons">
+					<div class="header-icon twitter-color">
+						<a href="<%=header.twitter_href%>" target="_blank">
+							<img src="<%=verticalPath%>/images/header/twitter-icon.png" title="Twitter">
+						</a>
+					</div>
+					<div class="header-icon fb-color">
+						<a href="<%=header.fb_href%>" target="_blank">
+							<img src="<%=verticalPath%>/images/header/fb-icon.png" title="Facebook">
+						</a>
+					</div>
+					<div class="header-icon mobile-color">
+						<a href="<%=header.mobile_href%>" target="_blank">
+							<img src="<%=verticalPath%>/images/header/mobile-icon.png" title="Install Mobile App">
+						</a>
+					</div>
+				</div>
+				<div class="phone-number">
+					<i></i>
+					<%= clientSettings.inbound_number || '' %>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="bottom-bar">
+			<!-- ko if: availableLanguages.length > 0 -->
+			<div style="float: right">
+				<select data-bind="options: availableLanguages,
+				                   optionsText: 'name',
+				                   optionsValue: 'key',
+				                   value: selectedLanguage">
+				</select>
+			</div>
+			<!-- /ko -->
+			<ul class="nav-list" data-bind="foreach: { data: menus, as: 'item' }">
+				<!-- ko if: !authenticated || (authenticated && $root.authenticated())  -->
+				<li data-bind="css: { selected: $root.selectedMenuItem() === item }"><a data-bind="text: title, attr: { href: href }"></a></li>
+				<!-- /ko -->
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+(function($) {
+	$(function() {
+		$.search('callback', function(q) {
+		//alert ('search hit by q='+q);
+			var url = null;
+			if (q.toLowerCase().indexOf('certificate') !== -1) {
+				url = 'searchCertOfPayment.jsp';
+                <% if (authenticated) { %>
+				$.get( "/GenesysConvMgrProxy/StartState", { number: "<%=customerPhone%>", service: "GBank General Inquiries", state: "Cannot Find Certificate Of Payment", media: "web", detail1: "", detail2: "", closeState: "false" });
+                <% } %>
+			} else if (q.indexOf('john') !== -1) {
+				url = 'otherpage.jsp';
+			}
+
+			if (url) {
+				window.location.href = url + '?q=' + encodeURIComponent(q);
+				return true;
+			}
+
+			if ((q.toLowerCase().indexOf('loan') !== -1) || (q.toLowerCase().indexOf('application') !== -1) || (q.toLowerCase().indexOf('form') !== -1)) {
+                <% if (authenticated) { %>
+				$.get( "/GenesysConvMgrProxy/StartState", { number: "<%=customerPhone%>", service: "GBank Loan Application", state: "Cannot Find Application Form", media: "web", detail1: "", detail2: "", closeState: "true" }/*,
+					function(data,status){
+						alert("Data: " + data + "\nStatus: " + status);
+					}*/
+				);
+                <% } %>
+			}
+			return false;
+		});
+
+		function isMenuOpened() {
+			var list = $('.mobile-nav-list');
+			return list.css('left') === '0px';
+		}
+
+		function openMenu() {
+			$('.mobile-nav-list').css('left','0')
+			$('body').css('margin-left','200px');
+			$('.overlay').fadeIn().css('left','200px');
+		}
+
+		function closeMenu() {
+			$('.mobile-nav-list').css('left','-200px');
+			$('body').css('margin-left', 0 + 'px');
+			$('.overlay').css('left','0').hide(250);
+		}
+
+		$('.mobile-menu-btn').click(function() {
+			if (isMenuOpened()) {
+				closeMenu();
+			} else {
+				openMenu();
+			}
+		})
+
+		$('div.mobile-nav-list ul.nav-list').click(function() {
+			$('.mobile-menu-btn').click();
+			return true;
+		});
+
+		$('.close-btn').click(function() {
+			closeMenu();
+			return false;
+		});
+
+		$('body').click(function() {
+			if (isMenuOpened()) {
+				closeMenu();
+			}
+		});
+	});
+})(jQuery);
+
+window.onerror = function (msg, url, line) {
+	if (window.console!=undefined) console.log("Exception! Caught[via window.onerror]: '" + msg + "' from " + url + ":" + line);
+}
+</script>

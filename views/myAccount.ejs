@@ -1,0 +1,105 @@
+<%
+	var myaccount = verticalConfig.myaccount || {}
+%>
+<style>
+#save-channels-form label {
+	margin-right: 1em;
+}
+#save-channels-form span.error {
+	margin-top: 6px;
+	color: red;
+	display: block;
+}
+</style>
+<script id="myAccountTemplate" type="text/html">
+	<div class="page-width">
+		<div class="container">
+			<h2><%=myaccount.title || 'My Account'%></h2>
+			<div class="col-2">
+				<address>
+					<dl>
+						<dt>
+							<span data-bind="text: $root.fullName" /><br/>
+							<span data-bind="text: country" /><br/>
+						</dt>
+						<!-- ko if: phone -->
+						<dd>
+							<span>Mobile Phone:</span>
+							<span data-bind="text: phone" />
+						</dd>
+						<!-- /ko -->
+						<!-- ko if: email -->
+						<dd>
+							<span>E-mail:</span>
+							<a data-bind="text: email, attr: { href: 'mailto:' + email() }">
+							</a>
+						</dd>
+						<!-- /ko -->
+						<dd>
+                            <br/>
+							<span>Environment:</span>
+							<span data-bind="text: env" />
+						</dd>
+					</dl>
+				</address>
+			</div>
+			<div class="col-2">
+				<div class="form-wrapper" data-bind="validationOptions: { insertMessages: false }">
+				<form id="save-channels-form" action="saveChannels" method="post">
+					<% if (channels.length > 0) { %>
+					<fieldset>
+						<legend><%=myaccount.notification_channel_title || 'Preferred Notification Channel'%></legend>
+						<!-- ko foreach: channels -->
+						<input type="radio" name="channel" data-bind="value: id, attr: { id: code }, checked: $parent.selectedChannel, css: { required: $index == 0 }" />
+						<label data-bind="text: name, attr: { for: code }"></label>
+						<!-- /ko -->
+						<span class="error" data-bind="validationMessage: selectedChannel"></span>
+					</fieldset>
+					<% } %>
+					<fieldset>
+						<legend><%=myaccount.visual_channel_title || 'Preferred Visual Assistance Channel'%></legend>
+						<input type="radio" id="va_sms" name="va_channel" data-bind="value: 1, checked: selectedGMMChannel" class="required" />
+						<label for="va_sms">SMS</label>                                
+						<input type="radio" id="va_email" name="va_channel" data-bind="value: 2, checked: selectedGMMChannel" />
+						<label for="va_email">E-Mail</label>                                
+						<input type="radio" id="va_both" name="va_channel" data-bind="value: 3, checked: selectedGMMChannel" />
+						<label for="va_both">SMS and E-Mail</label>
+						<span class="error" data-bind="validationMessage: selectedGMMChannel"></span>
+					</fieldset>
+					<fieldset>
+						<legend><%=myaccount.offer_title || 'Offer Talk and Video with Advisor during Chat'%></legend>
+						<input type="radio" id="chat2Video_no" name="chat2Video" data-bind="value: 0, checked: chat2Video" class="required" />
+						<label for="chat2Video_no">No</label>                                
+						<input type="radio" id="chat2Video_yes" name="chat2Video" data-bind="value: 1, checked: chat2Video" class="required" />
+						<label for="chat2Video_yes">Yes</label>
+						<span class="error" data-bind="validationMessage: chat2Video"></span>
+					</fieldset>
+					<div class="buttons">
+						<button class="fg-btn" data-bind="click: saveChannels"><%=myaccount.save || 'Save'%></button>
+					</div>
+				</form>
+				</div>
+                <div class="form-wrapper">
+					<fieldset>
+						<legend><%=myaccount.send_alert_title || 'Send Notification'%></legend>
+                        <input type="checkbox" data-bind="checked: addSurvey" /> <%=myaccount.add_survey || 'Add Survey reference'%>
+                        <textarea placeholder="<%=myaccount.type_your_text || 'Type your text...'%>" style="height: 75px;" data-bind="value: msgText"></textarea>
+                        <div class="buttons">
+                            <button class="fg-btn" data-bind="click: sendMessage"><%=myaccount.send || 'Send'%></button>
+                        </div>
+					</fieldset>
+                </div>
+                <div class="form-wrapper">
+					<fieldset>
+						<legend><%=myaccount.customer_journey_title || 'Customer Journey'%></legend>
+                        <div class="buttons">
+                            <button class="fg-btn" data-bind="click: showJourney"><%=myaccount.show_journey || 'Show Journey'%></button>
+                            <button class="fg-btn" data-bind="click: cleanJourney"><%=myaccount.clean_journey || 'Close Journeys'%></button>
+                            <button class="fg-btn" data-bind="click: deleteJourney"><%=myaccount.delete_journey || 'Delete Journeys'%></button>
+                        </div>
+					</fieldset>
+                </div>
+			</div>
+		</div>
+	</div>
+</script>

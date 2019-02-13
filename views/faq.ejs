@@ -1,0 +1,175 @@
+<%
+	var faq = verticalConfig.faq || {}
+%>
+<script id="faqTemplate" type="text/html">
+	<% if (faq.show) { %>
+
+		<div style="background-color:#fff">
+			<div id="SVGheroSectionBg" class="svg-preloader position-relative gradient-half-primary-v3">
+				<div class="container space-2">
+					<div class="row align-items-lg-center">
+						<div class="col-lg-5 mb-7 mb-lg-0">
+							<!-- Info -->
+							<h1 class="mb-4"><span class="text-primary font-weight-semi-bold"><%=faq.title%></span></h1>
+							<p><%=faq.subtitle%></p>
+							<!-- End Info -->
+						</div>
+						<div class="col-lg-7">
+							<!-- SVG Icon -->
+							<figure class="ie-we-have-an-idea">
+							<img class="js-svg-injector" src="<%=verticalPath%>/svg/illustrations/<%=faq.illustration%>" alt=<%=faq.title%>
+									data-parent="#SVGheroSectionBg">
+							</figure>
+							<!-- End SVG Icon -->
+						</div>
+					</div>
+			
+			</div>
+			
+					<!-- SVG Background -->
+				<figure class="position-absolute right-0 bottom-0 left-0">
+						<img class="js-svg-injector" src="<%=verticalPath%>/svg/components/wave-1-bottom-sm.svg" alt="Image Description"
+							data-parent="#SVGheroSectionBg">
+				</figure>
+				<!-- End SVG Background Section -->
+			</div>
+			<!-- End Hero Section -->
+	
+
+			   <!-- FAQ Section -->
+			   <div class="container">
+					<div class="space-0 space-md-1">
+						
+						<% var index = 1; var items = faq.items || [];
+							items.forEach(item => {
+								index++;
+						%>
+								
+						<% if (index % 2 === 0) { %>
+								<div class='card-deck d-block d-lg-flex card-lg-gutters-2 mb-3'>
+						<% } %>
+									<a class="card card-frame mb-3 mb-lg-0" href="<%=item.href%>">
+										<div class="card-body p-4">
+										<!-- Icon Block -->
+										<div class="media">
+											<figure id="icon<%=item.iconId%>" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+											<img class="js-svg-injector" src="<%=verticalPath%>/svg/icons/icon-<%=item.iconId%>.svg" alt="SVG"
+													data-parent="#icon<%=item.iconId%>">
+											</figure>
+											<div class="media-body">
+											<h2 class="h5"><%=item.label%></h2>
+											<p class="font-size-1"><%-markdown(item.text)%></p>
+			
+											<div class="media">
+												<!-- Contributors List -->
+												<ul class="list-inline mr-2 mb-0">
+												<% if (item.img1) { %>
+												<li class="list-inline-item mr-0">
+													<div class="u-sm-avatar u-sm-avatar--bordered rounded-circle">
+													<img class="img-fluid rounded-circle" src="<%=verticalPath%>/images/100x100/<%=item.img1%>" alt="Image Description">
+													</div>
+												</li>
+												<% } %>
+												<% if (item.img2) { %>
+												<li class="list-inline-item ml-n3 mr-0">
+													<div class="u-sm-avatar u-sm-avatar--bordered rounded-circle">
+													<img class="img-fluid rounded-circle" src="<%=verticalPath%>/images/100x100/<%=item.img2%>" alt="Image Description">
+													</div>
+												</li>
+												<% } %>
+												</ul>
+												<!-- End Contributors List -->
+			
+												<div class="media-body">
+												<!-- Article Authors -->
+												<% if (item.collection) { %>
+												<small class="d-block text-dark"> <%=item.collection%></small>
+												<% } %>
+												<% if (item.written) { %>
+												<small class="d-block text-dark">
+													<span class="text-muted"><%=item.written%></span>
+												</small>
+												<% } %>
+												<!-- End Article Authors -->
+												</div>
+											</div>
+											</div>
+										</div>
+										<!-- End Icon Block -->
+										</div>
+									</a>
+						
+									<% if (index % 2 === 1) { %>
+									</div>
+									<% } %>
+		             
+						<% }) %>
+
+					  </div>
+
+					 
+
+					  <div class="text-center mt-3">
+						<a class="btn btn-primary transition-3d-hover" href="#">See all Topics</a>
+					  </div>
+					</div>
+				</div>
+				  <!-- End FAQ Section -->
+
+
+
+
+	  <!-- About Section -->
+			<div class="container space-2 space-md-3">
+				<div class="row align-items-lg-center">
+				  <div class="col-lg-5 mb-7 mb-lg-0">
+					<!-- Info -->
+					<div class="pr-lg-7">
+					  <div class="mb-4">
+						<h3 class="h5">G-Sol process</h3>
+						<p>Once you are invited to G-Sol Agency, you company will be set within days. We help to take of all the paperwork.</p>
+					  </div>
+		  
+					  <!-- Link -->
+					  <a class="card border-0 shadow-sm" href="#">
+						<div class="card-body p-4">
+						  <div class="media align-items-center">
+							<div class="u-avatar mr-3">
+							  <img class="img-fluid rounded-circle" src="<%=verticalPath%>/images/icons/img1.png" alt="Image Description">
+							</div>
+							<span class="media-body">
+							  <span class="d-flex justify-content-between align-items-center font-weight-semi-bold">
+								Get Started with G-Sol <span class="fas fa-angle-right"></span>
+							  </span>
+							</span>
+						  </div>
+						</div>
+					  </a>
+					  <!-- End Link -->
+					</div>
+					<!-- End Info -->
+				  </div>
+		  
+				  <div id="SVGchattingBoy" class="col-lg-7 svg-preloader">
+					<!-- SVG Icon -->
+					<figure class="ie-chatting-boy">
+					  <img class="js-svg-injector" src="<%=verticalPath%>/svg/illustrations/<%=faq.illustration1%>" alt="Image Description"
+						  data-parent="#SVGchattingBoy">
+					</figure>
+					<!-- End SVG Icon -->
+				  </div>
+				</div>
+			</div>
+			<!-- End About Section -->
+
+
+
+
+
+
+
+		</div>
+
+
+		<% } %>
+</script>

@@ -1,0 +1,208 @@
+{
+	colors: {
+		primary: '#fff',
+		secondary: '#ececec',
+		footer: '#666',
+		buttons: '#c33',
+		font: '#666'
+	},
+
+	header: {
+		menu_items: [
+			{ label: 'Info', href: '#' },
+			{ label: 'Equity Loan', href: '#purchase' },
+			{ label: 'Claim', href: '#claim' },
+			{ label: 'Learning', href: '#learning' },
+			{ label: 'Contact Us', href: '#contactus' },
+			{ label: 'My Account', href: '#myAccount', auth: true }
+		],
+		login: 'Log In',
+		search: 'Search...'
+	},
+
+	footer: {
+		link_groups: [
+            {
+				label: 'CORPORATE INFORMATION', 
+				links: [
+					{ label: 'About Us', href: '#' },
+					{ label: 'Privacy and Security', href: '#' },
+					{ label: 'Contact Us', href: '#' }
+				]
+			},
+			{
+				label: 'RESOURSES', 
+				links: [
+					{ label: 'Discounts', href: '#' },
+					{ label: 'Digital Accessibility', href: '#' },
+					{ label: 'FAQ', href: '#' }
+				]
+			}
+		],
+		copyright: 'GBank - Powered by Genesys &copy; 2018'
+	},
+
+	home: {
+		carousel: [{
+				title: 'Home Mortgage Loans',
+				subtitle: 'calculate your payments',
+				text: 'Learn about our mortgage loans and start the home mortgage process today. Browse our mortgage products, see current rates, calculate monthly payments and more.',
+				image: 'mortgage_loan.jpg',
+				button: { label: 'Click here', href: '#' },
+				banner_icons: ['home_key.png', 'home_calculator.png', 'home_mobile.png', 'home_online.png']
+			}, {
+				title: 'Checking and Savings',
+				subtitle: 'different accounts for different lives',
+				text: 'Discover the benefits of checking and savings accounts from GBank. find a checking account that fits your daily banking needs or open a savings account with competitive interest rates to plan for the future.',
+				image: 'checking_saving.jpg',
+				button: { label: 'Click here', href: '#' },
+				banner_icons: ['home_checking.png', 'home_saving.png', 'home_mobile.png', 'home_online.png']
+			}, {
+				title: 'Investments',
+				subtitle: '529 College Savings to Brokerage Accounts',
+				text: 'Learn about our Investment products, including information about assessing your risk tolerance and different investments. You will be prepared to plan for your own financial security.',
+				image: 'investment.jpg',
+				button: { label: 'Click here', href: '#' },
+				banner_icons: ['home_chart.png', 'home_saving.png', 'home_mobile.png', 'home_online.png']
+			 }
+		],
+		features: {
+			title: 'Loans for Different Needs',
+			subtitle: 'Subtitle',
+			show: true,
+			items: [{
+					title: 'MORTGAGE 5, 15, AND 30 YEAR',
+					text: 'Is a new home in your future? Let us help you get there with fixed or adjustable rate mortgages. We offer competitive rates and quick turnaround on your application.',
+					button: { label: 'More Info', href: '#' }
+				}, {
+					title: 'REFINANCE EXISTING MORTGAGE',
+					text: 'Now is the time to refinance. Let us help find the right opportunity for you while the rates are still low!  Refinance experts are standing by to help you.  Contact us today!',
+					button: { label: 'More Info', href: '#' }
+				}, {
+					title: 'HOME EQUITY AND OTHERS',
+					text: 'Get a low introductory rate for your home equity line of credit.  G-Bank also offers auto loans - fill out a <a href="loanApplication.jsp">car loan application</a> and drive the car of your dreams.',
+					button: { label: 'More Info', href: '#' }
+				}]
+		},
+		details: {
+			title: 'Detailed information',
+			subtitle: 'Our most popular accounts are below. You can also view all types of accounts.',
+			show: true,
+			items: [{
+					title: 'CHECKING',
+					text: 'Is a **new** home in your feature? Let us help you get there with fixed pr adjustable rolemortgages.',
+					image: 'details1.png',
+					href: '#'
+				}, {
+					title: 'SAVING',
+					text: 'Title and text...',
+					image: 'details2.png',
+					href: '#'
+				}, {
+					title: 'CDs',
+					text: 'Title and text...',
+					image: 'details3.png',
+					href: '#'
+				}, {
+					title: 'ONLINE BANKING',
+					text: 'Title and text...',
+					image: 'details4.png',
+					href: '#'
+				}]
+		}
+	},
+
+	login: {
+		title: 'Log In',
+		subtitle: 'Please enter your username and password',
+		username: 'Username',
+		password: 'Password',
+		button_label: 'Log In',
+		request: 'Request New Account'
+	},
+
+	contact_us: {
+		title: 'Contact Us',
+		phone: '(650) 466-3240',
+		text: "We're here **24 hours** a day, **7 days** a week to assist you with your financial needs. You decide how and when to contact us and we promise to provide you with an exceptional experience.",
+		channels: [
+			{ icon: 'CallBack-icon.png', label: 'Callback', comment: "We'll call you back -- immediately or at a scheduled time", href: 'webCallback.ejs' },
+			{ icon: 'CallWeb-icon.png', label: 'Call with Web Browser', comment: "Use WebRTC on Chrome browser to call us.", href: 'contactwebrtc.ejs' },
+			{ icon: 'Twitter-icon.png', label: 'Twitter', comment: "Use #GBankSocial in your Tweet. *", href: 'https://twitter.com/GbankSocial', target: '_blank' },
+			{ icon: 'Facebook-icon.png', label: 'Facebook', comment: "Join us on Facebook. *", href: 'https://www.facebook.com/gbankdemo', target: '_blank' }
+		],
+		international: {
+			title: 'International Numbers',
+			countries: [
+				{ name: 'France', code: 'FR', phone: '(33) 182887470' },
+				{ name: 'Spain', code: 'ES', phone: '(43) 932292915' },
+				{ name: 'Japan', code: 'JP', phone: '(81) 345790365' },
+				{ name: 'Italy', code: 'IT', phone: '(39) 0694803134<' }
+			]
+		}
+	},
+
+	purchase: {
+		title: 'Equity Loan',
+		subtitle: 'Program Goal',
+		text: 'The goal of a home equity loan modification is to help you with a financial hardship. Depending on your current financial situation, you may qualify for a modification of your term, interest rate or monthly payments, or a combination of two or more of these loan provisions.',
+		form: {
+			title: 'Please complete the following fields and press Next',
+			items: [
+				{ label: 'Loan Amount', name: 'amount', element: 'input', validation: { required: true } },
+				{ label: 'Monthly Mortgage Payment', name: 'payment', element: 'input', validation: { required: true } },
+				{ label: 'Residence Type', name: 'res_type', element: 'select', options: ['Single Family', 'Condo', 'Townhouse'] },
+				{ label: 'Loan Purpose', name: 'text', element: 'select', options: ['Home Improvement', 'Debt Consolidation'] },
+				{ label: 'Estimated Home Value', name: 'estimate', element: 'input', validation: { required: true } },
+				{ label: 'Residence Use', name: 'use', element: 'select', options: ['Primary', 'Second Home', 'Investment'] }
+			]
+		},
+		button_label: 'Submit'
+	},
+
+	claim: {
+		title: 'Claim',
+		subtitle: 'Some Subtitle',
+		text: 'text with **details**...',
+		form: {
+			title: 'Form Title',
+			label1: 'Reason',
+			label2: 'Comment',
+			list1: ['Lost card', 'Fraud', 'Wrong charge'],
+			text: 'We will conract to your in 24 hours'
+		},
+		button_label: 'Submit'
+	},
+
+	register: {
+		text: `In order to create your GBank account, please register on <a href="http://demo.genesyslab.com/" target="blank_"> G-DEMO Portal</a>.
+
+Once your G-demo account is approved, go to <a href="http://demo.genesyslab.com/gdemo/forms/user/in_provisioning.jsp" target="blank_"> [My Live Env] / [My Customer]</a> to update your customer information.<br/>This will create your account in GBank.
+
+If you have questions, please send an email to <a href="mailto:tm@genesyslab.com?subject=GBank%20Question%20on%20PFS%20Account%20Registration"> tm@genesyslab.com</a>
+`
+	},
+
+	myaccount: {
+		title: 'My GBank Account',
+		notification_channel_title: 'Predefined Notification Channel',
+		visual_channel_title: 'Preferred Visual Assistance Channel',
+		offer_title: 'Offer Talk and Video with Advisor during Chat',
+		save: 'Save'
+	},
+
+	learning: {
+		text: `##Learning
+Paragraph 1
+
+Paragraph 3
+
+Paragraph 3`
+	},
+
+	survey: {
+		rate_question: 'How would you rate your experiense today?',
+		comments: 'Please add your comments',
+		button: 'Submit'
+	}
+}

@@ -1,0 +1,22 @@
+﻿<%
+	var survey = verticalConfig.survey || {}
+%>
+<script id="surveyTemplate" type="text/html">
+	<div class="page-width">
+		<div class="container">
+			<h2>Survey</h2>
+			<div class="form-wrapper">
+			<form class="fg-form survey-form" method="post">
+				<label><%=survey.rate_question || 'How would you rate your experience today?'%></label>
+				<rating-widget params="value: rate"></rating-widget>
+				<label><%=survey.comments || 'Please add your comments'%></label>
+				<textarea data-bind="value: comment" maxlength="1024"></textarea>
+				<div class="buttons">
+					<button class="fg-btn" data-bind="enable: rate, click: submit"><%=survey.button || 'Submit'%></button>
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+</script>
+<script src="<%=contextPath%>/js/rating.js"></script>

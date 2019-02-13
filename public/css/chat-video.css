@@ -1,0 +1,154 @@
+	html {
+	  font-family: Roboto, Arial, sans-serif;
+	}
+    .VideoUI * {
+        box-sizing: border-box
+    }
+    .VideoUI {
+        bottom: 0px;
+        right: 0px;
+		position: fixed;
+        padding: 0px;
+        border-radius: initial;
+        border: 0px solid rgb(46, 104, 219);
+        width: 300px;
+		/* height: 110px; */
+        box-shadow: 0px 5px 18px 0px #ccc;
+        background-color: rgb(60, 70, 77);
+        -webkit-box-shadow: 0px 5px 18px 0px #ccc
+		-webkit-transition: all 0.5s linear;
+		-moz-transition: all 0.5s linear;
+		transition: all 0.5s linear;
+		/*z-index: -1;*/
+    }
+	.VideoUI .call{
+		background-color: rgb(255, 255, 255);
+		height: 0px;
+		width: 300px;
+		overflow: hidden;
+		-webkit-transition: all 2s linear;
+		-moz-transition: all 2s linear;
+		transition: all 2s linear;
+	}
+	.VideoUI .close {
+		width: 15px;
+		height: 22px;
+        border-radius: initial;
+        border: 1px solid rgb(245, 247, 250);
+        right: 0px;
+        top: 0px;
+        color: rgb(60, 70, 77);
+        font-size: 15px;
+		font-weight: bold;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        background-color: rgb(245, 247, 250); 
+		-webkit-transition: opacity 0.4s linear, height 2s linear;
+		-moz-transition: opacity 0.4s linear, height 2s linear;
+		transition: opacity 0.4s linear, height 2s linear;
+    }
+	.VideoUI .close:hover {
+        opacity: 1
+    }
+    .VideoUI .title:hover + .close {
+        opacity: 1
+    }
+    .VideoUI .title {
+		padding: 0px;
+		visibility: inherit;
+        margin: 5px 10px 5px;
+        text-align: center;
+        color: rgb(255, 255, 255);
+		font-size: 12px;
+        font-weight: bold;
+		opacity: 1;
+		-webkit-transition: all 2s linear;
+		-moz-transition: all 2s linear;
+		transition: all 2s linear;
+    }
+    .VideoUI .form {
+        padding: 3px;
+        border-radius: initial;
+        border: 0px solid rgb(46, 104, 219);
+        /* height: 73px; */
+		overflow: hidden;
+        -ms-overflow-x: hidden;
+        -ms-overflow-y: auto;
+        background-color: rgb(245, 247, 250);
+		-webkit-transition: all 2s linear;
+		-moz-transition: all 2s linear;
+		transition: all 2s linear;
+		margin: 0 auto;
+        display: flex
+    }
+    .VideoUI .form label {
+        color: rgb(85, 93, 102);
+        font-size: 11px;
+        margin-top: 8px;
+        display: block
+    }
+    .VideoUI .form label span {
+        text-align: right;
+        padding-right: 5px;
+        display: inline-block
+    }
+    .VideoUI .form label input {
+        border-radius: initial;
+        border: 1px solid rgb(187, 187, 187);
+        width: 100%;
+        height: 27px;
+        padding-left: 8px;
+        font-size: 11px;
+        margin: 6px;
+        display: inline-block;
+        box-shadow: 3px 5px 16px -6px #ccc;
+        -webkit-box-shadow: 3px 5px 16px -6px #ccc
+    }
+    .VideoUI .form label input.error {
+        border-color: red
+    }
+    .VideoUI .form .submit {
+		color:white;
+		font-weight: bold;
+        border-radius: initial;
+        border: 1px solid rgb(204, 204, 204);
+        width: 49%;
+        height: 32px;
+		margin: 0px auto 2px;
+        background-color: rgb(72, 122, 218);
+    }
+	
+	.VideoUI .form .submit:hover {
+	    background-color: rgb(65, 106, 190);
+		cursor: pointer;
+    }
+    .VideoUI .end {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0.3;
+        background-image: url("data:image/png;base64,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")
+    }
+    .VideoUI .end:hover {
+        opacity: 1
+    }
+    .settings-group {
+        display: none
+    }
+	.call {
+        bottom: 0;
+        right: 300px;
+		position: fixed;
+        padding: 0px;
+        border-radius: initial;
+        border: 0px solid rgb(46, 104, 219);
+        height: 0px;
+        box-shadow: 0px 5px 18px 0px #ccc;
+        background-color: rgb(255, 255, 255);
+        -webkit-box-shadow: 0px 5px 18px 0px #ccc
+		-webkit-transition: all 2s linear;
+		-moz-transition: all 2s linear;
+		transition: all 2s linear;
+    }
